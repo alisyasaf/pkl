@@ -1,0 +1,21 @@
+body{
+    font-family: 'Poppins';
+    src: url('fonts/poppins/Poppins-Medium.ttf');
+}
+p {
+    font-weight: normal;
+    font-size: 15x;
+    color: #000000;
+  }
+
+h1 {
+    font-weight: bolder;
+    font-size: 48px;
+    color: #000000;
+}
+
+h6{
+    font-weight: bold;
+    font-size: 18px;
+    color: #061755;
+}

@@ -12,7 +12,7 @@
     
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="css/style.css">
     <title>MITRA TASPEN</title>
   </head>
   <body>
@@ -102,7 +102,7 @@
           <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
             <!-- Links -->
             <a class="logo" href="#">
-                <img src="img/logo.png" alt="logo" width="120" height="55">
+                <img src="img/logo.png" alt="logo" width="140" height="60">
             </a>
           <!-- Grid column -->
         </div>
