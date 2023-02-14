@@ -1,10 +1,15 @@
+*,
+html{
+    padding: 0;
+    margin: 0;
+}
 body{
     font-family: 'Poppins';
     src: url('fonts/poppins/Poppins-Medium.ttf');
 }
 p {
     font-weight: normal;
-    font-size: 15x;
+    font-size: 13px;
     color: #000000;
   }
 
@@ -19,3 +24,8 @@ h6{
     font-size: 18px;
     color: #061755;
 }
+
+.top-buffer { 
+    margin-top:40px; 
+}
+
