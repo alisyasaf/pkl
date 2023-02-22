@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BuktiBayarController;
+use App\Http\Controllers\DashboardFAQController;
+use App\Http\Controllers\FAQController;
+use App\Http\Controllers\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,16 +18,44 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('home', [
+        "title"=>"Home"
+    ]);
 });
 
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [LoginController::class, 'authenticate']);
+Route::post('/logout', [LoginController::class, 'logout']);
+
+Route::get('/dashboard', function(){
+    return view('dashboard.index',[
+        "title"=>"Dashboard"
+    ]);
+})->middleware('auth');
+
+Route::get('/dashboard/generate', function(){
+    return view('/dashboard/generate',[
+        "title"=>"Generate Akun Mitra"
+    ]);
 });
 
-Route::get('/faq', function () {
-    return view('faq');
+Route::get('/faq', [FAQController::class, 'index']);
+
+//route FAQ dashboard admin
+Route::resource('/dashboard/faq', DashboardFAQController::class);
+
+
+Route::get('/entry-bukti',[BuktiBayarController::class,'index']);
+Route::post('/entry-bukti', [BuktiBayarController::class, 'store']);
+
+
+
+
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin');
+
+    //semua route dalam grup ini hanya bisa diakses oleh admin
 });
 
 Route::get('/generate', function () {
@@ -44,4 +76,8 @@ Route::get('/dashboard-admin', function () {
     ]);
 });
 
+Route::middleware(['auth', 'role:mitra'])->group(function () {
+    Route::get('/mitra', [MitraController::class, 'index'])->name('mitra');
 
+    //semua route dalam grup ini hanya bisa diakses mitra
+});
