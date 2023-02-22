@@ -26,4 +26,22 @@ Route::get('/faq', function () {
     return view('faq');
 });
 
+Route::get('/generate', function () {
+    return view('generate', [
+        'title' => "Generate Akun"
+    ]);
+});
+
+Route::get('/laporan-perkembangan-usaha', function () {
+    return view('laporan', [
+        'title' => "Laporan Perkembangan Usaha"
+    ]);
+});
+
+Route::get('/dashboard-admin', function () {
+    return view('dashboardAdmin', [
+        'title' => "Dashboard Admin"
+    ]);
+});
+
 
