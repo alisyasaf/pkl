@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\FAQ;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class DashboardFAQController extends Controller
 {
@@ -14,7 +15,7 @@ class DashboardFAQController extends Controller
      */
     public function index()
     {
-        return view('dashboard.faq.index',[
+        return view('admin.dashboard.faq.index', [
             'title' => 'Frequently Asked Questions',
             'faqs' => FAQ::all()
         ]);
@@ -27,7 +28,8 @@ class DashboardFAQController extends Controller
      */
     public function create()
     {
-        return view('dashboard.faq.create');
+        $faqs = FAQ::all();
+        return view('admin.dashboard.faq.create', ['faqs' => $faqs]);
     }
 
     /**
@@ -36,6 +38,8 @@ class DashboardFAQController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+
     public function store(Request $request)
     {
         $validatedData = $request->validate([
@@ -43,9 +47,15 @@ class DashboardFAQController extends Controller
             'answer' => 'required'
         ]);
 
-        FAQ::create($validatedData);
+        DB::table('f_a_q_s')->insert([
+            'id' => $request['id'],
+            'question' => $request['question'],
+            'answer' => $request['answer']
 
-        return redirect('/dashboard/faq')->with('success', 'FAQ berhasil ditambahkan.');
+
+        ]);
+
+        return redirect('/admin/dashboard/faq')->with('success', 'FAQ berhasil ditambahkan.');
     }
 
     /**
@@ -65,9 +75,10 @@ class DashboardFAQController extends Controller
      * @param  \App\Models\FAQ  $fAQ
      * @return \Illuminate\Http\Response
      */
-    public function edit(FAQ $fAQ)
+    public function edit($id)
     {
-        return view('dashboard.faq.edit');
+        $faqs = DB::table('f_a_q_s')->find($id);
+        return view('admin.dashboard.faq.edit', ['faqs' => $faqs]);
     }
 
     /**
@@ -77,21 +88,34 @@ class DashboardFAQController extends Controller
      * @param  \App\Models\FAQ  $fAQ
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FAQ $fAQ)
+    public function update(Request $request, $id)
     {
-        //
-    }
+        $request->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
 
+        DB::table('f_a_q_s')
+        ->where('id', $id)
+        ->update([
+            // 'id' => $request['id'],
+            'question' => $request['question'],
+            'answer' => $request['answer']
+        ]);
+        return redirect('/admin/dashboard/faq')->with('success', 'FAQ berhasil diubah.');
+    }
     /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\FAQ  $fAQ
      * @return \Illuminate\Http\Response
      */
-    public function destroy(FAQ $fAQ)
+    public function destroy($id)
     {
-        FAQ::destroy($fAQ->question);
+        $faq = FAQ::find($id);
 
-        return redirect('/dashboard/faq')->with('success', 'FAQ berhasil dihapus.');
+        $faq->delete();
+
+        return redirect('/admin/dashboard/faq')->with('success', 'FAQ berhasil dihapus.');
     }
 }

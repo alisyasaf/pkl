@@ -23,7 +23,12 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            if(Auth::user()->role==1){
+                return redirect()->intended('/admin/dashboard');
+            }
+            if(Auth::user()->role==2){
+                return redirect()->intended('/mitra/dashboard');
+            }
         }
         return back()->withErrors('loginError', 'Login Failed!');
     }
@@ -33,6 +38,7 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
 
         return redirect('/');
     }

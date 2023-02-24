@@ -1,12 +1,11 @@
 <h1>Tambah FAQ</h1>
 <div class="col-lg-8">
-    <form method="post" action="/dashboard/faq">
-        @method('put')
+    <form method="post" action="/admin/dashboard/faq">
         @csrf
         <div class="mb-3">
           <label for="question" class="form-label">Pertanyaan</label>
           <input type="text" class="form-control @error('question') is-invalid
-          @enderror" id="question" name="question" required autofocus value="{{ old('question', $faq->question) }}">
+          @enderror" id="question" name="question">
           @error('question')
           <div class="invalid-feedback"></div>
               {{ $message }}

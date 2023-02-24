@@ -11,7 +11,8 @@
         <div class="container mt-4">
             <div class="row top-buffer">
                 <div class="col-md-5 mx-auto">
-                    <form action="/faq">
+                    <form action="/faq" method="get">
+                        @csrf
                         <div class="input-group">
                             <input type="text" class="form-control border-end-0 border rounded-pill" type="search" placeholder="Cari di sini..." name="search" id="search">
                             <span class="input-group-append">

@@ -1,3 +1,5 @@
+@if (Auth::user()->role==1)
+
 <nav class="navbar navbar-expand-lg navbar-light shadow p-2 mb-4 bg-white rounded sticky-top">
     <div class="container d-flex">
     <a class="navbar-brand ms-1 p-2" href="#">
@@ -12,10 +14,10 @@
       <a class="me-1 flex text-black fs-5 nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="nav-icon fa-regular fa-user text-black"></i>
         <!-- <li class="nav-item"><a href="profil-mahasiswa.php" class="nav-pills-link justify-content-center text-light"><h5>Mahasiswa</h5></a></li> -->
-        Mitra
+        {{ auth()->user()->name}}
       </a>
       <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-        <li><a href="#" class="dropdown-item">Logout</a></li>
+        <li><a href="/logout" class="dropdown-item">Logout</a></li>
     </ul>
     </div>
     </div>
@@ -29,7 +31,7 @@
                  with font-awesome or any other icon font library -->
 
             <li class="nav-item">
-              <a href="/" class="nav-link text-white">
+              <a href="/dashboard" class="nav-link text-white">
                 <i class="nav-icon fa-solid fa-house text-white"></i>
                   Beranda
               </a>
@@ -65,14 +67,14 @@
               </li>
 
             <li class="nav-item">
-                <a href="/" class="nav-link text-white">
+                <a href="/admin/dashboard/faq" class="nav-link text-white">
                     <i class="nav-icon fa-solid fa-comment-dots text-white"></i>
-                    FaQ
+                    FAQ
                 </a>
             </li>
 
             <li class="nav-item">
-                <a href="/" class="nav-link text-white">
+                <a href="/forum" class="nav-link text-white">
                   <i class="nav-icon fa-solid fa-users text-white"></i>
                   Forum
                 </a>
@@ -86,7 +88,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="/" class="nav-link text-white">
+                <a href="/admin/dashboard/account" class="nav-link text-white">
                   <i class="nav-icon fa-solid fa-user-plus text-white"></i>
                   Generate Akun
                 </a>
@@ -98,3 +100,4 @@
       </div>
       <!-- /.sidebar -->
     </aside>
+@endif

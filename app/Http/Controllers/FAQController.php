@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\FAQ;
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreFAQRequest;
 use App\Http\Requests\UpdateFAQRequest;
 
@@ -13,13 +14,11 @@ class FAQController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $faq = FAQ::latest();
-
-        if(request('search'))
+        if($request-> has('search'))
         {
-            $faq->where('question', 'answer', '%' . request('search'), '%');
+            $data = FAQ::where('question', 'answer', '%' .$request->search, '%');
         }
 
         return view('/faq',[

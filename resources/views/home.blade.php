@@ -1,7 +1,10 @@
 @extends('layouts.main')
+@include('partials.sidebarGuest')
 
 @section('container')
-    <h1>Selamat Datang,</h1>
+    <div class="container mx-auto">
+        <h1>Selamat Datang </h1>
+    </div>
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner img-responsive">
           <div class="carousel-item active">
@@ -18,12 +21,12 @@
                 <p>Stay in the middle</p>
               </div>
           </div>
-          {{-- <div class="carousel-item">
+          <div class="carousel-item">
             <img class="d-block img-responsive w-40 mx-auto" src="img/bunny 3.jpg" alt="Third slide">
             <div class="carousel-caption d-none d-md-block">
                 <h5>NewJeans</h5>
                 <p>...</p>
-              </div> --}}
+              </div>
         </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">

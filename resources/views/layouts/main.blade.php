@@ -19,35 +19,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <link rel="stylesheet" href="css/style.css">
-    <title>{{$title}}</title>
+    <title>{{ $title }}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light shadow p-3 mb-5 bg-white rounded">
-        <div class="container">
-          <a class="navbar-brand" href="#">
-            <img src="img/logo.png" alt="logo" width="105" height="45">
-          </a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse">
-            <div>
-            <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" href="/">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/login">Login</a>
-              </li>
-            </ul>
-            </div>
-          </div>
-        </div>
-      </nav>
 
-    <div class="container mt-4">
-        @yield('container')
-    </div>
+        {{-- @include('partialsMitra.sidebarMitra')
+        @include('partials.sidebarAdmin') --}}
+    </nav>
+
+        <div class="">
+            @yield('container')
+            {{-- @yield('generate') --}}
+        </div>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -55,7 +38,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
 
 
-    <!-- Footer -->
+    {{-- <!-- Footer -->
   <footer class="text-center text-lg-start bg-light text-muted p-0">
 
     <!-- Section: Links  -->
@@ -124,7 +107,7 @@
       <a class="text-reset fw-bold" href="https://www.taspen.co.id/">TASPEN</a>
     </div>
     <!-- Copyright -->
-  </footer>
+  </footer> --}}
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
