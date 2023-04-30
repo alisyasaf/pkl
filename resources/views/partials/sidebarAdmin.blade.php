@@ -52,15 +52,15 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="#" class="nav-link text-white">
+                    <a href="/admin/dashboard/mitra" class="nav-link text-white">
                       <i class="far fa-circle nav-icon" style="color:#061755"></i>
                       Daftar Mitra
                     </a>
                   </li>
                   <li class="nav-item">
-                      <a href="#" class="nav-link text-white">
+                      <a href="/admin/dashboard/angsuran" class="nav-link text-white">
                         <i class="far fa-circle nav-icon" style="color:#061755"></i>
-                        Detail Mitra
+                        Data Angsuran
                       </a>
                   </li>
                   </ul>
@@ -81,7 +81,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="/" class="nav-link text-white">
+                <a href="/admin/dashboard/verifikasi" class="nav-link text-white">
                   <i class="nav-icon fa-solid fa-check text-white"></i>
                   Verifikasi Angsuran
                 </a>

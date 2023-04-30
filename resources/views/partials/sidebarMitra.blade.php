@@ -30,7 +30,7 @@
                  with font-awesome or any other icon font library -->
 
             <li class="nav-item">
-              <a href="/" class="nav-link text-white">
+              <a href="/mitra/dashboard" class="nav-link text-white">
                 <i class="nav-icon fa-solid fa-house text-white"></i>
                   Beranda
               </a>
@@ -51,21 +51,15 @@
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="#" class="nav-link text-white">
-                      <i class="far fa-circle nav-icon" style="color:#061755"></i>
-                      Informasi Pinjaman
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                      <a href="#" class="nav-link text-white">
-                        <i class="far fa-circle nav-icon" style="color:#061755"></i>
-                        Pembayaran
-                      </a>
-                  </li>
-                  <li class="nav-item">
                       <a href="#" class="nav-link text-white">
                         <i class="far fa-circle nav-icon" style="color:#061755"></i>
                         Detail Angsuran
+                      </a>
+                  </li>
+                  <li class="nav-item">
+                      <a href="/mitra/dashboard/pembayaran" class="nav-link text-white">
+                        <i class="far fa-circle nav-icon" style="color:#061755"></i>
+                        Pembayaran
                       </a>
                   </li>
                 </ul>
@@ -79,7 +73,7 @@
             </li>
 
             <li class="nav-item">
-                <a href="/" class="nav-link text-white">
+                <a href="/forum" class="nav-link text-white">
                   <i class="nav-icon fa-solid fa-users text-white"></i>
                   Forum
                 </a>

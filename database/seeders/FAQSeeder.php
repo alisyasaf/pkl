@@ -14,6 +14,6 @@ class FAQSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }

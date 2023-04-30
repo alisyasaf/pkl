@@ -40,12 +40,16 @@
         </div>
         <div class="mb-3">
           <label for="role" class="form-label">Role</label>
-          <input type="text" class="form-control @error('role')
+          <select name="role" id="role">
+            <option value="1">Admin</option>
+            <option value="2">Mitra</option>
+          </select>
+          {{-- <input type="text" class="form-control @error('role')
           @enderror" id="role" name="role">
           @error('role')
           <div class="invalid-feedback"></div>
               {{ $message }}
-          @enderror
+          @enderror --}}
         </div>
         <button type="submit" class="btn btn-primary">Generate</button>
       </form>

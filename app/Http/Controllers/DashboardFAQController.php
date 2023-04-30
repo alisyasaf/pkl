@@ -47,11 +47,10 @@ class DashboardFAQController extends Controller
             'answer' => 'required'
         ]);
 
-        DB::table('f_a_q_s')->insert([
+        DB::table('faq')->insert([
             'id' => $request['id'],
             'question' => $request['question'],
             'answer' => $request['answer']
-
 
         ]);
 
@@ -77,7 +76,7 @@ class DashboardFAQController extends Controller
      */
     public function edit($id)
     {
-        $faqs = DB::table('f_a_q_s')->find($id);
+        $faqs = DB::table('faq')->find($id);
         return view('admin.dashboard.faq.edit', ['faqs' => $faqs]);
     }
 
@@ -95,7 +94,7 @@ class DashboardFAQController extends Controller
             'answer' => 'required'
         ]);
 
-        DB::table('f_a_q_s')
+        DB::table('faq')
         ->where('id', $id)
         ->update([
             // 'id' => $request['id'],

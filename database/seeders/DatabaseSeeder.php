@@ -27,6 +27,14 @@ class DatabaseSeeder extends Seeder
             'role' => '1'
         ]);
 
+        User::create([
+            'name' => 'Burjo Polsek',
+            'email' => 'burjopolsek@gmail.com',
+            'username' => 'burjopolsek',
+            'password' => bcrypt('12345'),
+            'role' => '2'
+        ]);
+
         FAQ::create([
             'question' => 'Apa saja syarat yang dibutuhkan untuk mengajukan pinjaman?',
             'answer' => 'Lorem ipsum dolor sit amet,

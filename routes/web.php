@@ -3,9 +3,13 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\DashboardFAQController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\FAQController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MitraController;
+use App\Http\Controllers\AngsuranController;
+use App\Http\Controllers\PembayaranController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,6 +50,13 @@ Route::get('/admin/dashboard', function(){
 // route FAQ dashboard admin (CRUD)
 Route::resource('/admin/dashboard/faq', DashboardFAQController::class);
 
+
+Route::resource('/admin/dashboard/mitra', MitraController::class);
+
+Route::resource('/admin/dashboard/angsuran', AngsuranController::class);
+
+Route::resource('/admin/dashboard/verifikasi', VerifikasiController::class);
+
 // Manajemen akun oleh admin (Generate Akun)
 Route::get('/admin/dashboard/account', [AccountController::class, 'index']);
 Route::post('/admin/dashboard/account', [AccountController::class, 'store']);
@@ -58,9 +69,20 @@ Route::get('/admin/dashboard/account/generate', function () {
 });
 
 
+
 // dashboard mitra
 Route::get('/mitra/dashboard', function(){
     return view('mitra.dashboard.index',[
         "title"=>"Dashboard"
     ]);
 })->middleware('auth');
+
+
+Route::get('/mitra/dashboard/pembayaran', [PembayaranController::class, 'index']);
+Route::post('/mitra/dashboard/pembayaran', [PembayaranController::class, 'store']);
+
+Route::get('/mitra/dashboard/pembayaran/success', function(){
+    return view('mitra.dashboard.pembayaran.success',[
+        "title" => "Pembayaran Berhasil"
+    ]);
+});
