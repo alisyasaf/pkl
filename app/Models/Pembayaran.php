@@ -13,10 +13,14 @@ class Pembayaran extends Model
     protected $fillable=[
         'bukti_bayar',
         'bulan_bayar',
-        'mitra_id'
+        'mitra_id',
+        'angsuran_id'
     ];
 
     public function mitra(){
-        return $this->hasOne(Mitra::class);
+        return $this->belongsTo(Mitra::class);
+    }
+    public function angsuran(){
+        return $this->belongsTo(Angsuran::class);
     }
 }

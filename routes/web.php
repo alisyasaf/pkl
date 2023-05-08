@@ -10,6 +10,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\MitraController;
 use App\Http\Controllers\AngsuranController;
 use App\Http\Controllers\PembayaranController;
+use App\Http\Controllers\VerifikasiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -78,11 +79,15 @@ Route::get('/mitra/dashboard', function(){
 })->middleware('auth');
 
 
-Route::get('/mitra/dashboard/pembayaran', [PembayaranController::class, 'index']);
-Route::post('/mitra/dashboard/pembayaran', [PembayaranController::class, 'store']);
-
 Route::get('/mitra/dashboard/pembayaran/success', function(){
     return view('mitra.dashboard.pembayaran.success',[
         "title" => "Pembayaran Berhasil"
     ]);
 });
+Route::get('/mitra/dashboard/pembayaran', [PembayaranController::class, 'index']);
+Route::get('/mitra/dashboard/pembayaran/{id}', [MitraController::class, 'pembayaran']);
+Route::post('/mitra/dashboard/pembayaran', [PembayaranController::class, 'store']);
+
+Route::get('/pembayaran/verifikasi/{id}', [PembayaranController::class, 'verifikasi']);
+
+Route::get('/mitra/dashboard/angsuran', [MitraController::class, 'angsuran']);

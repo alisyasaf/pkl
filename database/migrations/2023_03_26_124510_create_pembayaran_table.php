@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('bukti_bayar');
             $table->unsignedBigInteger('mitra_id')->nullable();
             $table->foreign('mitra_id')->references('id')->on('mitra')->onDelete('cascade')->onUpdate('cascade');
+            $table->unsignedBigInteger('angsuran_id');
+            $table->foreign('angsuran_id')->references('id')->on('angsuran')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }

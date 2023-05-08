@@ -13,15 +13,20 @@ class Angsuran extends Model
     protected $table = 'angsuran';
     protected $fillable = [
         'mitra_id',
+        'angsuran_id',
         'tanggal_jatuh_tempo',
-        'nominal'
+        'nominal',
+        'keterangan'
     ];
-    protected $attributes = [
-        'keterangan' => 'belum lunas',
-    ];
+    // protected $attributes = [
+    // ];
 
-    public function mitra():BelongsTo{
+    public function mitra(){
         return $this->belongsTo(Mitra::class);
+    }
+
+    public function angsuran(){
+        return $this->belongsTo(Pembayaran::class);
     }
 
 }

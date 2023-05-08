@@ -7,6 +7,7 @@ use App\Models\Mitra;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreMitraRequest;
 use App\Http\Requests\UpdateMitraRequest;
+use App\Models\Angsuran;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
@@ -141,5 +142,24 @@ class MitraController extends Controller
         $mitra->delete();
 
         return redirect('/admin/dashboard/mitra')->with('success', 'Data mitra berhasil dihapus.');
+    }
+
+    public function angsuran()
+    {
+        $mitra_id = auth()->user()->mitra->id;
+        $angsuran = Angsuran::where('mitra_id', $mitra_id)->orderBy('updated_at', 'desc')->get();
+        return view('mitra.dashboard.angsuran.index', [
+            'title' => 'Daftar Angsuran',
+            'angsuran'=>$angsuran
+        ]);
+    }
+
+    public function pembayaran(string $id)
+    {
+        $angsuran = Angsuran::where('id', $id)->first();
+        return view('mitra.dashboard.pembayaran.index',[
+            "title" => "Pembayaran",
+            "angsuran" => $angsuran
+        ]);
     }
 }

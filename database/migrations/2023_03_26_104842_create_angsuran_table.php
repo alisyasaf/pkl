@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('angsuran', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('mitra_id')->nullable()->index();
+            $table->unsignedBigInteger('mitra_id')->index();
             $table->foreign('mitra_id')->references('id')->on('mitra')->onDelete('cascade')->onUpdate('cascade');
             $table->date('tanggal_jatuh_tempo');
             $table->double('nominal');

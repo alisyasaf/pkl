@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Pembayaran;
 use App\Models\User;
 use App\Models\Mitra;
+use App\Models\Angsuran;
+use App\Models\Pembayaran;
 use Illuminate\Http\Request;
 
 class PembayaranController extends Controller
@@ -14,8 +15,9 @@ class PembayaranController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(string $id)
     {
+
         return view('mitra.dashboard.pembayaran.index',[
             "title" => "Pembayaran"
         ]);
@@ -47,8 +49,10 @@ class PembayaranController extends Controller
         $image_path = $request->file('bukti_bayar')->store('bukti_bayar', 'public');
 
         $data = Pembayaran::create([
+            'angsuran_id' => $request['id'],
             'bulan_bayar' => $request['bulan_bayar'],
-            'bukti_bayar' => $image_path
+            'bukti_bayar' => $image_path,
+            'mitra_id' => auth()->user()->mitra->id,
         ]);
 
         return redirect('/mitra/dashboard/pembayaran/success')->with('success', 'Bukti bayar berhasil diupload.');
@@ -97,5 +101,22 @@ class PembayaranController extends Controller
     public function destroy(Pembayaran $pembayaran)
     {
         //
+    }
+
+    public function verifikasi(string $id)
+    {
+        // Retrieve the installment with the provided ID
+    $angsuran = Angsuran::findOrFail($id);
+
+    // Check if there is a payment record for the installment
+    $pembayaran = Pembayaran::where('angsuran_id', $id)->first();
+
+    if ($angsuran->keterangan === 'belum lunas') {
+        $angsuran->update(['keterangan' => 'lunas']);
+        return redirect('/admin/dashboard/verifikasi');
+    } else {
+        $angsuran->update(['keterangan' => 'belum lunas']);
+        return redirect('/admin/dashboard/verifikasi');
+    }
     }
 }

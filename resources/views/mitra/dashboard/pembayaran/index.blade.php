@@ -4,6 +4,7 @@
 
 <div class="container mt-4">
 <h1>Pembayaran</h1>
+<p>Nominal: {{ $angsuran->nominal }}</p>
 <form action="/mitra/dashboard/pembayaran" method="post" enctype="multipart/form-data">
     <!-- Add CSRF Token -->
     @csrf
@@ -21,6 +22,7 @@
         <span class="text-red-600 text-sm">{{ $message }}</span>
         @enderror
     </div>
+    <input type="text" name="id" value="{{ $angsuran->id }}" hidden>
 
 
     <button type="submit" class="btn btn-primary">Submit</button>
