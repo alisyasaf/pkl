@@ -14,9 +14,9 @@ class VerifikasiController extends Controller
      */
     public function index()
     {
-        return view('admin.dashboard.verifikasi.index',[
+        return view('admin.dashboard.verifikasi.index', [
             'title' => 'Verifikasi Bukti Bayar',
-            'pembayaran' => Pembayaran::all()
+            'pembayaran' => Pembayaran::latest()->get()
         ]);
     }
 

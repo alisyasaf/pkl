@@ -49,7 +49,7 @@
                         <i class="bi bi-people-fill pr-4" style="font-size: 70pt; color:#E8C21D"></i>
                     </div>
                     <div class="text-center">
-                        <span style="font-size: 40px">50</span>
+                        <span style="font-size: 40px">{{ $jumlah_mitra }}</span>
                         <div class="line-2"></div>
                         <span style="font-size: 14px;">mitra</span>
                     </div>

@@ -49,8 +49,7 @@ class AngsuranController extends Controller
             'nominal' => 'required'
         ]);
 
-        DB::table('angsuran')->insert([
-            'id' => $request['id'],
+        Angsuran::create([
             'mitra_id' => $request['mitra_id'],
             'tanggal_jatuh_tempo' => $request['tanggal_jatuh_tempo'],
             'nominal' => $request['nominal']
@@ -58,6 +57,7 @@ class AngsuranController extends Controller
 
         return redirect('/admin/dashboard/angsuran')->with('success', 'Data berhasil diupdate.');
     }
+
 
     /**
      * Display the specified resource.
@@ -102,9 +102,10 @@ class AngsuranController extends Controller
      */
     public function destroy($id)
     {
-        $angsuran =  Angsuran::where('id', $id);
+        $angsuran =  Angsuran::findOrFail($id);
         $angsuran->delete();
 
         return redirect('/admin/dashboard/angsuran')->with('success', 'Data angsuran berhasil dihapus.');
     }
+
 }

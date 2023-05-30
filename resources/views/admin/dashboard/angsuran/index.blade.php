@@ -30,10 +30,11 @@
                     <td>{{ formatRupiah($value->nominal) }}</td>
                     <td class="">{{ $value->keterangan }}</td>
                     <td>
+                        <form action="/admin/dashboard/angsuran/{{ $value->id }}" method="POST" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data?')">
                             @csrf
-                            @method('delete')
-                            <button type="submit" class="btn btn-danger"
-                                onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">delete</button>
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </td>
                 </tr>
                 @empty

@@ -19,7 +19,16 @@
             <td class="align-middle">{{ $a->tanggal_jatuh_tempo }}</td>
             <td class="align-middle">{{ $a->nominal }}</td>
             <td class="align-middle">{{ $a->keterangan }}</td>
-            <td class="align-middle"><a href="/mitra/dashboard/pembayaran/{{ $a->id }}" class="btn btn-primary">Bayar</a></td>
+
+            @if ($a->keterangan === 'belum lunas')
+            <td class="align-middle">
+                <a class="btn btn-primary" href="/mitra/dashboard/pembayaran/{{ $a->id }}">
+                    Bayar
+                </a>
+            </td>
+            @else
+            <td></td>
+            @endif
         </tr>
     @endforeach
 

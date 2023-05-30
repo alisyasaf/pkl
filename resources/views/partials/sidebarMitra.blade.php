@@ -43,9 +43,9 @@
                         <i class="bi bi-file-earmark-fill text-white mr-2" style="font-size: 16pt"></i>
                         <span class="description text-white">Detail Angsuran</span>
                     </a>
-                    <a href="/mitra/dashboard/pembayaran" class="list-group-item mb-1">
+                    <a href="/forum" class="list-group-item mb-1">
                         <i class="bi bi-cash-stack text-white mr-2" style="font-size: 16pt"></i>
-                        <span class="description text-white">Pembayaran</span>
+                        <span class="description text-white">Forum</span>
                     </a>
                     <a href="/logout" class="list-group-item fixed-bottom ml-2">
                         <i class="bi bi-box-arrow-right text-white mr-2" style="font-size: 16pt"></i>

@@ -164,8 +164,22 @@ class MitraController extends Controller
     }
     public function profile()
     {
-        $mitra_id = auth()->user()->mitra->id;
-        $mitra = Mitra::where('mitra_id', $mitra_id)->get();
-        return view('mitra.dashboard.index', ['mitra'=>$mitra]);
+        $user = auth()->user();
+        $mitra = $user->mitra;
+        return view('mitra.dashboard.index', compact('mitra'), [
+            "title" => "Dashboard"
+        ]);
     }
+
+    public function count()
+    {
+        $jumlah_mitra = Mitra::count();
+        return view('home', [
+            "title" => "Home",
+            "jumlah_mitra" => $jumlah_mitra
+        ]);
+    }
+
+
+
 }

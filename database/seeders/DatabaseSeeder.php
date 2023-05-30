@@ -37,32 +37,22 @@ class DatabaseSeeder extends Seeder
 
         FAQ::create([
             'question' => 'Apa saja syarat yang dibutuhkan untuk mengajukan pinjaman?',
-            'answer' => 'Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. In mi sem, ullamcorper id dui non,
-            molestie porta diam. Pellentesque congue sit amet justo quis varius. Cras pharetra,
-            arcu in maximus luctus, nisi tortor rhoncus augue, nec tempor lorem risus non enim.
-            Nam porttitor quam non quam lobortis, commodo pellentesque enim semper. Vestibulum a magna nulla.
-            Donec aliquet nibh in velit elementum, vulputate pharetra eros varius. Sed ultricies facilisis dapibus.'
+            'answer' => 'Syarat-syarat untuk mengajukan permohonan pinjaman adalah Surat Permohonan Bantuan dengan lampiran
+            copy rekening koran/tabungan/rekening pinjaman bulan terakhir, copy SIUP/SITU, pas photo ukuran 4x6, copy
+            Akta Pendirian, NPWP, dan KTP, serta surat pernyataan tidak memiliki pinjaman dana program kemitraan dari BUMN lain.
+            Informasi lebih lanjut bisa melalui PT TASPEN terdekat.'
         ]);
 
         FAQ::create([
             'question' => 'Bagaimana cara mengajukan sertifikat halal untuk UMKM?',
-            'answer' => 'Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. In mi sem, ullamcorper id dui non,
-            molestie porta diam. Pellentesque congue sit amet justo quis varius. Cras pharetra,
-            arcu in maximus luctus, nisi tortor rhoncus augue, nec tempor lorem risus non enim.
-            Nam porttitor quam non quam lobortis, commodo pellentesque enim semper. Vestibulum a magna nulla.
-            Donec aliquet nibh in velit elementum, vulputate pharetra eros varius. Sed ultricies facilisis dapibus.'
+            'answer' => 'Untuk mengajukan sertifikat halal melalui PT TASPEN, UMKM terkait harus merupakan mitra
+            binaan taspen dan memiliki produk berupa makanan atau minuman.'
         ]);
 
         FAQ::create([
             'question' => 'Bagaimana cara mengajukan kerja sama sponsorship dengan PT TASPEN?',
-            'answer' => 'Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. In mi sem, ullamcorper id dui non,
-            molestie porta diam. Pellentesque congue sit amet justo quis varius. Cras pharetra,
-            arcu in maximus luctus, nisi tortor rhoncus augue, nec tempor lorem risus non enim.
-            Nam porttitor quam non quam lobortis, commodo pellentesque enim semper. Vestibulum a magna nulla.
-            Donec aliquet nibh in velit elementum, vulputate pharetra eros varius. Sed ultricies facilisis dapibus.'
+            'answer' => 'Untuk mengajukan kerja sama sponshorship, perlu mengirim proposal dan
+            surat permohonan bantuan sponsor yang ditujukan kepada PT TASPEN.'
         ]);
 
         \App\Models\Role::insert([[
