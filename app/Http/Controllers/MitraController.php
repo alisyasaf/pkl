@@ -162,4 +162,10 @@ class MitraController extends Controller
             "angsuran" => $angsuran
         ]);
     }
+    public function profile()
+    {
+        $mitra_id = auth()->user()->mitra->id;
+        $mitra = Mitra::where('mitra_id', $mitra_id)->get();
+        return view('mitra.dashboard.index', ['mitra'=>$mitra]);
+    }
 }

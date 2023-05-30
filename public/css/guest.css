@@ -1,0 +1,43 @@
+.count span{
+    font-size: 20pt;
+}
+
+.line{
+    background-color: #E8C21D;
+    height: 3px;
+    width: 20%;
+}
+
+.line-2{
+    background-color: #E8C21D;
+    height: 2px;
+    width: 50px;
+}
+
+.line-3{
+    background-color: #E8C21D;
+    height: 2px;
+    width: 35px;
+}
+
+.mitra-1
+{
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.mitra-2{
+    margin-right: 30vh;
+}
+
+.button-1{
+    background-color: #061755;
+    border-radius: 50px;
+    width: 230px;
+    color: white;
+    margin-left: 40%;
+    margin-right: 60%;
+    margin-top: 70px;
+    margin-bottom: 40px;
+}

@@ -1,4 +1,4 @@
-@include('layoutsMitra.mainMitra')
+@extends('layoutsMitra.mainMitra')
 
 @section('lprn')
 <h1 style="font-family: Poppins;">Laporan Perkembangan Usaha</h1>

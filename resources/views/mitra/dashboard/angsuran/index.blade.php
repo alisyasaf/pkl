@@ -1,25 +1,25 @@
 @extends('layouts.main')
-@include('partials.sidebarAdmin')
+@include('partials.sidebarMitra')
 @section('container')
-<h1>Welcome, {{ auth()->user()->name }}</h1>
-<table>
+<h2>Welcome, {{ auth()->user()->name }}</h2>
+<table class="table">
     <thead>
         <tr>
-            <th>Mitra</th>
-            <th>Tanggal Jatuh Tempo</th>
-            <th>Nominal</th>
-            <th>Keterangan</th>
-            <th>Aksi</th>
+            <th scope="col">Mitra</th>
+            <th scope="col">Tanggal Jatuh Tempo</th>
+            <th scope="col">Nominal</th>
+            <th scope="col">Keterangan</th>
+            <th scope="col">Aksi</th>
         </tr>
     </thead>
     <tbody>
     @foreach ($angsuran as $a)
         <tr>
-            <td>{{ $a->mitra->nama_usaha }}</td>
-            <td>{{ $a->tanggal_jatuh_tempo }}</td>
-            <td>{{ $a->nominal }}</td>
-            <td>{{ $a->keterangan }}</td>
-            <td><a href="/mitra/dashboard/pembayaran/{{ $a->id }}">Bayar</a></td>
+            <td class="align-middle">{{ $a->mitra->nama_usaha }}</td>
+            <td class="align-middle">{{ $a->tanggal_jatuh_tempo }}</td>
+            <td class="align-middle">{{ $a->nominal }}</td>
+            <td class="align-middle">{{ $a->keterangan }}</td>
+            <td class="align-middle"><a href="/mitra/dashboard/pembayaran/{{ $a->id }}" class="btn btn-primary">Bayar</a></td>
         </tr>
     @endforeach
 

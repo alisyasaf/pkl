@@ -19,6 +19,7 @@ class AngsuranController extends Controller
     public function index()
     {
         return view('admin.dashboard.angsuran.index', [
+            'title' => 'Daftar Angsuran Mitra',
             'angsuran' => Angsuran::all()
         ]);
 

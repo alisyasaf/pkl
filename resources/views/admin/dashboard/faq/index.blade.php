@@ -1,6 +1,6 @@
-@extends('layouts.main')
-
-@section('container')
+@extends('layouts.mainAdmin')
+@include('partials.sidebarAdmin')
+@section('container-admin')
     <h1>FAQ</h1>
 
     @if (session()->has('success'))

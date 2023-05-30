@@ -1,8 +1,13 @@
-@extends('layouts.main')
+@extends('layouts.mainAdmin')
 @include('partials.sidebarAdmin')
-@section('container')
-
-<table>
+@section('container-admin')
+<h2>Verifikasi Angsuran</h2>
+<div>
+    <aside class="search float-right mr-3 mb-3">
+        <input type="text" placeholder="Search..">
+    </aside>
+</div>
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>Bulan Bayar</th>
@@ -28,7 +33,7 @@
 
             @if($p->angsuran->keterangan === 'belum lunas')
             <td>
-                <a href="/pembayaran/verifikasi/{{ $p->angsuran_id }}">
+                <a class="btn btn-success" href="/pembayaran/verifikasi/{{ $p->angsuran_id }}">
                     Verifikasi
                 </a>
             </td>

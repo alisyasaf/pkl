@@ -1,61 +1,65 @@
 @guest
 
-<nav class="navbar navbar-expand-lg navbar-light shadow p-2 mb-4 bg-white rounded sticky-top">
+<nav class="navbar navbar-expand navbar-light shadow bg-white sticky-top p-1" style="z-index: 2">
     <div class="container d-flex">
-    <a class="navbar-brand ms-1 p-2" href="/">
-        <img src="img/logo.png" alt="logo" width="130">
+        <div class="image">
+    <a class="navbar-brand ms-1 p-2" href="/dashboard">
+        <img src="img/logo.png" alt="logo" width="100">
       </a>
-      <a class="nav-link ms-1 p-2" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false">
+    </div>
+      <div id="menu-button">
+        <input type="checkbox" id="menu-checkbox">
+        <label for="menu-checkbox" id="menu-label">
+            <div id="hamburger"></div>
+        </label>
+      </div>
+      {{-- <a class="nav-link ms-1 p-2" data-widget="pushmenu" href="#" role="button">
+        <i class="fas fa-bars"></i></a> --}}
+      {{-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
-      </button>
+      </button> --}}
 
-      <div class="nav-item dropdown ml-auto p-2">
-      <a class="me-1 flex text-black fs-5 nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      {{-- <div class="nav-item dropdown ml-auto p-2">
+      <a class="me-1 flex text-black nav-link dropdown-toggle" id="navbarDropdownMenuLink" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <i class="nav-icon fa-regular fa-user text-black"></i>
-        Guest
+        <!-- <li class="nav-item"><a href="profil-mahasiswa.php" class="nav-pills-link justify-content-center text-light"><h5>Mahasiswa</h5></a></li> -->
+        Tamu
       </a>
-      <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-        <li><a href="/login" class="dropdown-item">Login</a></li>
-    </ul>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
+        <li><a href="/login" class="dropdown-item">Masuk</a></li>
+      </div>
+    </div> --}}
+
+    <div class="nav-item ml-auto p-2">
+        <i class="nav-icon fa-regular fa-user text-black"></i>
+        Tamu
     </div>
     </div>
+</nav>
 
-   <!-- Main Sidebar Container -->
-    <aside class="main-sidebar sidebar-dark-primary elevation-4 position-absolute top-100 start-0" style="background-color: #061755; height: 100vh">
-    <!-- Sidebar Menu -->
-    <nav class="mt-2">
-      <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu">
-        <!-- Add icons to the links using the .nav-icon class
-             with font-awesome or any other icon font library -->
+    <aside class="main-sidebar mt-5 pt-3" style="z-index: 1">
+        <div class="sidebar">
+            <div class="main">
+                <div class="list-item">
+                    <a href="/login" class="list-group-item">
+                        <i class="bi bi-door-open-fill text-white mr-2" style="font-size: 16pt"></i>
+                        <span class="description text-white">Masuk</span>
+                    </a>
+                    <a href="/faq" class="list-group-item">
+                        <i class="bi bi-question-lg text-white mr-2" style="font-size: 16pt"></i>
+                        <span class="description text-white">FAQ</span>
+                    </a>
+                    {{-- <a href="/login" class="list-group-item">
+                        <i class="bi bi-door-open-fill text-white mr-2" style="font-size: 16pt"></i>
+                        <span class="description text-white">Login</span>
+                    </a> --}}
+                </div>
+            </div>
+        </div>
+    </aside>
 
-        <li class="nav-item">
-          <a href="/" class="nav-link text-white">
-            <i class="nav-icon fa-solid fa-house text-white"></i>
-              Beranda
-          </a>
-        </li>
 
-        <li class="nav-item">
-            <a href="/faq" class="nav-link text-white">
-                <i class="nav-icon fa-solid fa-comment-dots text-white"></i>
-                FAQ
-            </a>
-        </li>
-
-        <li class="nav-item">
-            <a href="/forum" class="nav-link text-white">
-              <i class="nav-icon fa-solid fa-users text-white"></i>
-              Forum
-            </a>
-          </li>
-
-      </ul>
-    </nav>
-    <!-- /.sidebar-menu -->
-  </div>
-  <!-- /.sidebar -->
-</aside>
+    <script src="js/scriptNavbar.js"></script>
 @endguest
 
 

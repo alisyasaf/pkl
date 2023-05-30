@@ -1,10 +1,13 @@
 @if (Auth::user()->role==2)
 @extends('layouts.main')
+@include('partials.sidebarMitra')
 @section('container')
 
-<div class="container mt-4">
-<h1>Pembayaran</h1>
-<p>Nominal: {{ $angsuran->nominal }}</p>
+<div class="container mt-4 d-flex flex-column">
+<h1 cla>Pembayaran Angsuran</h1>
+<div class="flex-containerr">
+<div class="kontainer mt-3">
+<p class="nominal">Nominal: {{ $angsuran->nominal }}</p>
 <form action="/mitra/dashboard/pembayaran" method="post" enctype="multipart/form-data">
     <!-- Add CSRF Token -->
     @csrf
@@ -25,8 +28,10 @@
     <input type="text" name="id" value="{{ $angsuran->id }}" hidden>
 
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary float-end" style="width: 100px; border-radius: 15px;">Submit</button>
   </form>
+</div>
+</div>
 </div>
   @endsection
   @endif

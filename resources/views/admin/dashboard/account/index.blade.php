@@ -1,6 +1,6 @@
-@extends('layouts.main')
-
-@section('container')
+@extends('layouts.mainAdmin')
+@include('partials.sidebarAdmin')
+@section('container-admin')
     <h1>Manajemen Akun</h1>
 
     @if (session()->has('success'))
@@ -9,7 +9,7 @@
         </div>
     @endif
     <div class="table-responsive">
-        <a href="/admin/dashboard/account/generate" class="btn btn-primary">Generate Akun</a>
+        <a href="/admin/dashboard/account/generate" class="btn btn-primary float-end mr-3 mb-2">Generate Akun</a>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>

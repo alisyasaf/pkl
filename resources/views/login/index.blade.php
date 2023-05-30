@@ -51,10 +51,10 @@
                         <input class="form-control text-dark" type="password" name="password" id="password" placeholder="Password" style="border-radius: 100px; background-color:white; border-color:white" required>
                     </div><br>
 
-                    <div class="form-group d-flex justify-content-center">
+                    {{-- <div class="form-group d-flex justify-content-center">
                         <input class="form-check-input" type="checkbox" id="check">
                         <label class="form-check-label" for="check" style="color: white;">Remember me</label>
-                    </div><br>
+                    </div><br> --}}
 
                     <div class="d-flex justify-content-center">
                         <button class="btn btn-light" type="submit" style="border-radius: 100px; color: #061755; width: 150px">Masuk</button>
