@@ -1,7 +1,16 @@
 @extends('layouts.mainAdmin')
 @include('partials.sidebarAdmin')
 @section('container-admin')
-    <h1>FAQ</h1>
+
+<style>
+    *{
+        font-family: Poppins;
+    }
+    td{
+        font-size: 11pt
+    }
+</style>
+    <h1>Edit FAQ</h1>
 
     @if (session()->has('success'))
         <div class="alert alert-success" role="alert">
@@ -9,7 +18,7 @@
         </div>
     @endif
     <div class="table-responsive">
-        <a href="/admin/dashboard/faq/create" class="btn btn-primary">Tambah FAQ</a>
+        <a href="/admin/dashboard/faq/create" class="btn btn-primary float-right mr-3 mb-3">Tambah FAQ</a>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -27,7 +36,7 @@
                         <td>{{ $value->answer }}</td>
                         <td>
                             <form action="/admin/dashboard/faq/{{ $value->id }}" method="post" class="d-inline">
-                                <a href="/admin/dashboard/faq/{{ $value->id }}/edit" class="badge bg-info">edit</a>
+                                <a href="/admin/dashboard/faq/{{ $value->id }}/edit" class="badge bg-info mb-1">edit</a>
                                 @csrf
                                 @method('delete')
                                 <button type="submit" class="badge bg-danger"

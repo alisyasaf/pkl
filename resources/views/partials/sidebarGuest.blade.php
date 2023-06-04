@@ -61,6 +61,3 @@
 
     <script src="js/scriptNavbar.js"></script>
 @endguest
-
-
-

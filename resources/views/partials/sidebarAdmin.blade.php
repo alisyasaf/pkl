@@ -58,6 +58,10 @@
                         <i class="bi bi-file-earmark-check-fill text-white mr-2" style="font-size: 16pt"></i>
                         <span class="description text-white">Verifikasi</span>
                     </a>
+                    <button class="list-group-item" onclick="openPopup('/forum')">
+                        <i class="bi bi-chat-left-dots-fill text-white mr-2" style="font-size: 16pt"></i>
+                        <span class="description text-white">Forum</span>
+                    </button>
                     <a href="/logout" class="list-group-item fixed-bottom ml-2">
                         <i class="bi bi-box-arrow-right text-white mr-2" style="font-size: 16pt"></i>
                         <span class="description text-white">Logout</span>
@@ -68,4 +72,9 @@
     </aside>
 
     <script src="{{ asset('js/scriptNavbar.js') }}"></script>
+    <script>
+        function openPopup(url) {
+            window.open(url, 'popupWindow', 'width=800,height=600');
+        }
+    </script>
 @endif

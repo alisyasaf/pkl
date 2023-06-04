@@ -1,6 +1,6 @@
 @if (Auth::user()->role==2)
-@extends('layouts.main')
-@section('container')
+@extends('layouts.mainMitra')
+@section('container-mitra')
 <div class="d-flex justify-content-center">
 <div class="card text-center verifikasi">
     <div class="card-body">

@@ -10,7 +10,12 @@
         </div>
     @endif
     <div class="table-responsive">
+        <div>
         <a href="/admin/dashboard/mitra/create" class="btn btn-primary mb-5 float-right mr-4 rounded">Tambah Data Mitra</a>
+        <aside class="search float-right mr-3 mb-3">
+            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+        </aside>
+        </div>
         <table class="table table-striped table-sm">
             <thead>
                 <tr>
@@ -21,7 +26,7 @@
                     <th scope="col">Keterangan</th>
                 </tr>
             </thead>
-            <tbody>
+            <tbody id="myTable">
                 @forelse ($mitra as $key=>$value)
                 <tr>
                     <td>{{ $key+1 }}</td>
@@ -43,4 +48,6 @@
             </tbody>
         </table>
     </div>
+
+    <script src="{{ asset('js/search.js') }}"></script>
 @endsection

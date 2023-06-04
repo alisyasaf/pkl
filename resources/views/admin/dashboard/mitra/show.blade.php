@@ -55,6 +55,11 @@ aside{
     color: white;
     width: 200px;
 }
+
+/* .text-wrap {
+  word-wrap: break-word;
+  white-space: normal;
+} */
 </style>
 
     {{-- Body --}}
@@ -80,7 +85,7 @@ aside{
             </div>
             <div class="row mb-1">
                 <label for="nip" class="col-sm-6 form-label">Alamat Mitra :</label>
-                <td class="col-sm-9">{{ $mitra->alamat }}</td>
+                <div class="col-sm-9 text-wrap" style="width: 260px; margin-left:0; padding-left:0">{{ $mitra->alamat }}</div>
             </div>
             <div class="row mb-1">
                 <label for="nip" class="col-sm-6 form-label">Aset Awal :</label>

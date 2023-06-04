@@ -17,7 +17,7 @@
                     <th scope="col">Email</th>
                     <th scope="col">Nama</th>
                     <th scope="col">Username</th>
-                    <th scope="col">Password</th>
+                    {{-- <th scope="col">Password</th> --}}
                     <th scope="col">Role</th>
                 </tr>
             </thead>
@@ -28,7 +28,7 @@
                         <td>{{ $value->email }}</td>
                         <td>{{ $value->name }}</td>
                         <td>{{ $value->username }}</td>
-                        <td>{{ $value->password }}</td>
+                        {{-- <td>{{ $value->password }}</td> --}}
                         <td>{{ $value->role }}</td>
                         <td>
 

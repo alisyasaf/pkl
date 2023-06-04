@@ -9,17 +9,31 @@
     *{
         margin-left: 5px
     }
+    .container{
+        width: 60%;
+        background-color: #e4e4e4;
+        border-radius: 20px;
+        margin-top: 20px;
+        padding: 30px 20px 30px 10px
+    }
     .form-control{
         border-radius: 75px;
-        border-color: #757575
+        border-color: #757575;
+        border-style: none;
     }
     #role{
         width: 200px;
-        border-radius: 30px
+        border-radius: 30px;
+        border-style: none;
+        padding: 0 10px 0 10px
+    }
+    h1{
+        margin-bottom: 30px;
     }
 </style>
+<div class="container">
 <h1>Generate Akun</h1>
-<div class="col-lg-8">
+<div class="">
     <form method="post" action="/admin/dashboard/account">
         @csrf
         <div class="mb-3">
@@ -71,6 +85,9 @@
               {{ $message }}
           @enderror --}}
         </div>
+        <div class="d-flex flex-row-reverse">
         <button type="submit" class="btn btn-primary">Generate</button>
+    </div>
       </form>
+</div>
 </div>

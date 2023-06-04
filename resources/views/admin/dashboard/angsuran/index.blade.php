@@ -10,7 +10,7 @@
     @endif
     <div class="table-responsive">
         <a href="/admin/dashboard/angsuran/create" class="btn btn-primary mb-5 float-right mr-4 rounded">Tambah Data Angsuran</a>
-        <table class="table table-striped table-sm">
+        <table class="table table-sm">
             <thead>
                 <tr>
                     <th scope="col">#</th>

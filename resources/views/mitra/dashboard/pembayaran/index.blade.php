@@ -1,7 +1,7 @@
 @if (Auth::user()->role==2)
-@extends('layouts.main')
+@extends('layouts.mainMitra')
 @include('partials.sidebarMitra')
-@section('container')
+@section('container-mitra')
 
 <div class="container mt-4 d-flex flex-column">
 <h1 cla>Pembayaran Angsuran</h1>

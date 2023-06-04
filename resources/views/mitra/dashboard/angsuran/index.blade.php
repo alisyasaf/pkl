@@ -1,8 +1,8 @@
-@extends('layouts.main')
+@extends('layouts.mainMitra')
 @include('partials.sidebarMitra')
-@section('container')
+@section('container-mitra')
 <h2>Welcome, {{ auth()->user()->name }}</h2>
-<table class="table">
+<table class="table mt-4">
     <thead>
         <tr>
             <th scope="col">Mitra</th>

@@ -39,3 +39,14 @@ toggleButton.addEventListener("change", function () {
 //     sidebar.classList.toggle('hide');
 //     console.log('ok');
 // })
+
+// $(document).ready(function() {
+//     $('#menu-checkbox').change(function() {
+//       if ($(this).is(':checked')) {
+//         $('.main-sidebar').removeClass('closed').addClass('open');
+//       } else {
+//         $('.main-sidebar').removeClass('open').addClass('closed');
+//       }
+//     });
+//   });
+
