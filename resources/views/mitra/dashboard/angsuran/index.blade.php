@@ -17,7 +17,7 @@
         <tr>
             <td class="align-middle">{{ $a->mitra->nama_usaha }}</td>
             <td class="align-middle">{{ $a->tanggal_jatuh_tempo }}</td>
-            <td class="align-middle">{{ $a->nominal }}</td>
+            <td class="align-middle">{{ formatRUpiah($a->nominal) }}</td>
             <td class="align-middle">{{ $a->keterangan }}</td>
 
             @if ($a->keterangan === 'belum lunas')

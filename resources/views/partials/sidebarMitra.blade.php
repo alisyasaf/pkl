@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand navbar-light shadow bg-white sticky-top p-1" style="z-index: 2">
     <div class="container d-flex">
         <div class="image">
-    <a class="navbar-brand ms-1 p-2" href="/dashboard">
+    <a class="navbar-brand ms-1 p-2" href="/mitra/dashboard">
         <img src="{{ asset('img/logo.png') }}" alt="logo" width="100">
       </a>
     </div>
@@ -43,10 +43,14 @@
                         <i class="bi bi-file-earmark-fill text-white mr-2" style="font-size: 16pt"></i>
                         <span class="description text-white">Detail Angsuran</span>
                     </a>
-                    <button class="list-group-item" onclick="openPopup('/forum')">
+                    <a href="/faq" class="list-group-item">
+                        <i class="bi bi-question-lg text-white mr-2" style="font-size: 16pt"></i>
+                        <span class="description text-white">FAQ</span>
+                    </a>
+                    <a href="/forum" class="list-group-item">
                         <i class="bi bi-chat-left-dots-fill text-white mr-2" style="font-size: 16pt"></i>
                         <span class="description text-white">Forum</span>
-                    </button>
+                    </a>
                     <a href="/logout" class="list-group-item fixed-bottom ml-2" onclick="positionedPopup(this.href,'myWindow','700','300','100','200','yes');return false">
                         <i class="bi bi-box-arrow-right text-white mr-2" style="font-size: 16pt"></i>
                         <span class="description text-white">Logout</span>
@@ -62,10 +66,11 @@
       <!-- /.sidebar -->
     </aside>
     <script src="{{ asset('js/scriptNavbar.js') }}"></script>
-    {{-- <script src="{{ asset('js/popup.js') }}"></script> --}}
     <script>
         function openPopup(url) {
-            window.open(url, 'popupWindow', 'width=800,height=600');
+            var newTab = window.open(url, '_blank');
+            newTab.focus();
         }
     </script>
+
 @endif

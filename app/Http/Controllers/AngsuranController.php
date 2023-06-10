@@ -43,12 +43,17 @@ class AngsuranController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'tanggal_jatuh_tempo' => 'required',
-            'nominal' => 'required'
-        ]);
+{
+    $validatedData = $request->validate([
+        'tanggal_jatuh_tempo' => 'required',
+        'nominal' => 'required|numeric'
+    ], [
+        'tanggal_jatuh_tempo.required' => 'Tanggal Jatuh Tempo harus diisi.',
+        'nominal.required' => 'Nominal harus diisi.',
+        'nominal.numeric' => 'Nominal harus berupa angka'
+    ]);
 
+    try {
         Angsuran::create([
             'mitra_id' => $request['mitra_id'],
             'tanggal_jatuh_tempo' => $request['tanggal_jatuh_tempo'],
@@ -56,7 +61,11 @@ class AngsuranController extends Controller
         ]);
 
         return redirect('/admin/dashboard/angsuran')->with('success', 'Data berhasil diupdate.');
+    } catch (\Exception $e) {
+        return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat menyimpan data.'])->withInput();
     }
+}
+
 
 
     /**

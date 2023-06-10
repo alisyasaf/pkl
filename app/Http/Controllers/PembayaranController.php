@@ -44,6 +44,12 @@ class PembayaranController extends Controller
         $this->validate($request, [
             'bulan_bayar' => 'required',
             'bukti_bayar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+        ], [
+            'bulan_bayar.required' => 'Bulan Bayar harus diisi.',
+            'bukti_bayar.required' => 'Bukti Bayar harus diisi.',
+            'bukti_bayar.image' => 'File yang diunggah harus berupa gambar.',
+            'bukti_bayar.mimes' => 'File yang diunggah harus memiliki format jpg, png, jpeg, gif, atau svg.',
+            'bukti_bayar.max' => 'Ukuran file yang diunggah tidak boleh lebih dari 2048 kb.'
         ]);
 
         $image_path = $request->file('bukti_bayar')->store('bukti_bayar', 'public');

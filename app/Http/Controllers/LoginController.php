@@ -23,15 +23,18 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            if(Auth::user()->role==1){
+            if(Auth::user()->role == 1){
                 return redirect()->intended('/admin/dashboard');
             }
-            if(Auth::user()->role==2){
+            if(Auth::user()->role == 2){
                 return redirect()->intended('/mitra/dashboard');
             }
         }
-        return back()->withErrors('loginError', 'Login Failed!');
+
+        // Failed login attempt
+        return back()->withErrors(['loginError' => 'Login gagal. Username atau password salah.']);
     }
+
 
     public function logout(Request $request)
     {

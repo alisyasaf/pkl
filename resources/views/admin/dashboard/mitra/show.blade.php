@@ -61,7 +61,7 @@ aside{
   white-space: normal;
 } */
 </style>
-
+<title>Detail Mitra</title>
     {{-- Body --}}
 <h1>Detail Mitra</h1>
 <div class="flex-container DM1" >
@@ -89,7 +89,7 @@ aside{
             </div>
             <div class="row mb-1">
                 <label for="nip" class="col-sm-6 form-label">Aset Awal :</label>
-                <td class="col-sm-9">{{ $mitra->aset_awal }}</td>
+                <td class="col-sm-9">{{ formatRupiah($mitra->aset_awal) }}</td>
             </div>
             <div class="row mb-1">
                 <label for="nominal_pinjaman" class="col-sm-6 form-label">Nominal Pinjaman</label>

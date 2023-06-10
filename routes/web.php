@@ -49,13 +49,17 @@ Route::get('/admin/dashboard', function(){
 Route::resource('/admin/dashboard/faq', DashboardFAQController::class)
     ->middleware('auth.admin');
 
-
+// Daftar Mitra
 Route::resource('/admin/dashboard/mitra', MitraController::class)
     ->middleware('auth.admin');
+Route::delete('/admin/dashboard/mitra', [MitraController::class, 'destroy']);
 
+
+// Daftar Angsuran
 Route::resource('/admin/dashboard/angsuran', AngsuranController::class)
     ->middleware('auth.admin');
 
+// Verifikasi Bukti Bayar
 Route::resource('/admin/dashboard/verifikasi', VerifikasiController::class)
     ->middleware('auth.admin');
 
@@ -102,6 +106,6 @@ Route::post('/mitra/dashboard/pembayaran', [PembayaranController::class, 'store'
     ->middleware('auth.mitra');
 
 
-    // Angsuran Mitra
+// Angsuran Mitra
 Route::get('/mitra/dashboard/angsuran', [MitraController::class, 'angsuran'])
     ->middleware('auth.mitra');

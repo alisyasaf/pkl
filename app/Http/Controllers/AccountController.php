@@ -21,6 +21,13 @@ class AccountController extends Controller
             'username' => 'required|unique:users',
             'password' => 'required|max:255',
             'role' => 'required'
+        ], [
+            'name.required' => 'Nama harus diisi.',
+            'email.required' => 'Email harus diisi',
+            'username.required' => 'Username harus diisi.',
+            'password.required' => 'Password harus diisi.',
+            'email.unique' => 'Email sudah dipakai.',
+            'username.unique' => 'Username sudah dipakai.'
         ]);
         $validatedData['password'] = bcrypt($validatedData['password']);
 

@@ -1,6 +1,7 @@
 @extends('layouts.mainAdmin')
 @include('partials.sidebarAdmin')
 @section('container-admin')
+<title>Manajemen Akun</title>
     <h1>Manajemen Akun</h1>
 
     @if (session()->has('success'))

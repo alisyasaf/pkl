@@ -10,7 +10,7 @@
         font-size: 11pt
     }
 </style>
-    <h1>Edit FAQ</h1>
+    <h1>FAQ</h1>
 
     @if (session()->has('success'))
         <div class="alert alert-success" role="alert">

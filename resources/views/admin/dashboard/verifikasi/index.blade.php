@@ -24,9 +24,9 @@
                 {{ $p->bulan_bayar }}
             </td>
             <td>
-                <a type="button" class="" data-toggle="modal" data-target="#exampleModalCenter">
-                    {{ $p->bukti_bayar }}
-                </a>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                    Bukti Bayar
+                </button>
                 {{-- <a class="" href="/storage/{{ $p->bukti_bayar }}" target="_blank">{{ $p->bukti_bayar }}</a> --}}
                 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">

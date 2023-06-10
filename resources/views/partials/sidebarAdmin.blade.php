@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand navbar-light shadow bg-white sticky-top p-1" style="z-index: 2">
     <div class="container d-flex">
         <div class="image">
-    <a class="navbar-brand ms-1 p-2" href="/dashboard">
+    <a class="navbar-brand ms-1 p-2" href="/admin/dashboard">
         <img src="{{ asset('img/logo.png') }}" alt="logo" width="100">
       </a>
     </div>
@@ -74,7 +74,9 @@
     <script src="{{ asset('js/scriptNavbar.js') }}"></script>
     <script>
         function openPopup(url) {
-            window.open(url, 'popupWindow', 'width=800,height=600');
+            var newTab = window.open(url, '_blank');
+            newTab.focus();
         }
     </script>
+
 @endif

@@ -13,10 +13,12 @@
 <body class="d-flex justify-content-center" style="background-color:#061755">
     <div class="card" style="top: 100px; height: 390px; background-color:#061755">
         <div class="login row align-items-center" style="height:400px; width:300px;">
+
             <div class="d-flex justify-content-center">
-                <img src="img/logo.png" alt="logo" width="270px"></img>
+                <img src="img/logo.png" alt="logo" width="270px">
             </div>
             <div>
+
                 @if (session()->has('success'))
                     <div class="alert alert-success alert-dismissible fade show" role="alert">
                         {{ session('success') }}
@@ -61,6 +63,11 @@
                     </div>
                 </form>
             </div>
+            @if($errors->has('loginError'))
+                <div class="alert alert-danger">
+                    {{ $errors->first('loginError') }}
+                </div>
+            @endif
         </div>
     </div>
 </body>

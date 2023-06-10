@@ -21,33 +21,34 @@
         border-radius: 20px
     }
 </style>
-<div class="container">
-<h1>Tambah FAQ</h1>
-<div class="">
-    <form method="post" action="/admin/dashboard/faq">
-        @csrf
-        <div class="mb-3">
-          <label for="question" class="form-label">Pertanyaan</label>
-          <input type="text" class="form-control @error('question') is-invalid
-          @enderror" id="question" name="question">
-          @error('question')
-          <div class="invalid-feedback"></div>
-              {{ $message }}
-          @enderror
+<title>Tambah FAQ</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Tambah FAQ</h1>
+        <div class="">
+            <form method="post" action="/admin/dashboard/faq">
+                @csrf
+                <div class="mb-3">
+                    <label for="question" class="form-label">Pertanyaan</label>
+                    <input type="text" class="form-control @error('question') is-invalid @enderror" id="question" name="question">
+                    @error('question')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="answer" class="form-label">Jawaban</label>
+                    <input type="textarea" class="form-control @error('answer') is-invalid @enderror" id="answer" name="answer">
+                    @error('answer')
+                    <div class="invalid-feedback">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="d-flex justify-content-center">
+                    <button type="submit" class="btn btn-primary mr-3">Tambah FAQ</button>
+                    <a href="/admin/dashboard/faq" class="btn btn-danger active" role="button" aria-pressed="true">Cancel</a>
+                </div>
+            </form>
         </div>
-        <div class="mb-3">
-          <label for="answer" class="form-label">Jawaban</label>
-          <input type="textarea" class="form-control @error('answer')
-          @enderror" id="answer" name="answer">
-          @error('answer')
-          <div class="invalid-feedback"></div>
-              {{ $message }}
-          @enderror
-        </div>
-        <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary mr-3">Tambah FAQ</button>
-            <a href="/admin/dashboard/faq" class="btn btn-danger active" role="button" aria-pressed="true">Cancel</a>
-        </div>
-      </form>
-</div>
-</div>
+    </div>
+</body>
+

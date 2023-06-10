@@ -36,10 +36,11 @@
                     <td>
                             <a href="/admin/dashboard/mitra/{{ $value->id }}" class="badge bg-info">detail</a>
                         {{-- <a href="/admin/dashboard/mitra/{{ $item->id }}/show" class="badge bg-info">detail</a> --}}
+                        <form action="/admin/dashboard/mitra/{{ $value->id }}" method="POST" style="display: inline-block;">
                             @csrf
-                            @method('delete')
-                            <button type="submit" class="badge bg-danger" style="border-color: none"
-                                onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">delete</button>
+                            @method('DELETE')
+                            <button type="submit" class="badge bg-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">delete</button>
+                        </form>
                     </td>
                 </tr>
                 @empty

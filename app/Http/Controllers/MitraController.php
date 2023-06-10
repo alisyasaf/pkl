@@ -11,6 +11,7 @@ use App\Models\Angsuran;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
+
 class MitraController extends Controller
 {
     /**
@@ -45,38 +46,43 @@ class MitraController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'fullname' => 'required',
-            'nip' => 'required',
-            'jenis_usaha' => 'required',
-            'nama_usaha' => 'required',
-            'alamat' => 'required',
-            'alamat_usaha' => 'required',
-            'aset_awal' => 'required',
-            'nominal_pinjaman' => 'required',
-            'tanggal_mulai' => 'required',
-            'tanggal_selesai' => 'required',
-        ]);
+{
+    $validatedData = $request->validate([
+        'fullname' => 'required',
+        'nip' => 'required',
+        'jenis_usaha' => 'required',
+        'nama_usaha' => 'required',
+        'alamat' => 'required',
+        'alamat_usaha' => 'required',
+        'aset_awal' => 'required|numeric',
+        'nominal_pinjaman' => 'required|numeric',
+        'tanggal_mulai' => 'required',
+        'tanggal_selesai' => 'required',
+    ], [
+        'fullname.required' => 'Nama Lengkap harus diisi.',
+        'nip.required' => 'NIP harus diisi.',
+        'nip.numeric' => 'NIP harus berupa angka.',
+        'jenis_usaha.required' => 'Jenis Usaha harus diisi.',
+        'nama_usaha.required' => 'Nama Usaha harus diisi.',
+        'alamat.required' => 'Alamat harus diisi.',
+        'alamat_usaha.required' => 'Alamat Usaha harus diisi.',
+        'aset_awal.required' => 'Aset Awal harus diisi.',
+        'aset_awal.numeric' => 'Aset Awal harus berupa angka.',
+        'nominal_pinjaman.required' => 'Nominal Pinjaman harus diisi.',
+        'nominal_pinjaman.numeric' => 'Nominal Pinjaman harus berupa angka.',
+        'tanggal_mulai.required' => 'Tanggal Mulai harus diisi.',
+        'tanggal_selesai.required' => 'Tanggal Selesai harus diisi.',
+    ]);
 
-        DB::table('mitra')->insert([
-            'id' => $request['id'],
-            'user_id' => $request['user_id'],
-            'fullname' => $request['fullname'],
-            'nip' => $request['nip'],
-            'jenis_usaha' => $request['jenis_usaha'],
-            'nama_usaha' => $request['nama_usaha'],
-            'alamat' => $request['alamat'],
-            'alamat_usaha' => $request['alamat_usaha'],
-            'aset_awal' => $request['aset_awal'],
-            'nominal_pinjaman' => $request['nominal_pinjaman'],
-            'tanggal_mulai' => $request['tanggal_mulai'],
-            'tanggal_selesai' => $request['tanggal_selesai'],
-
-        ]);
-
+    try {
+        // Insert the data into the mitra table
+        // ...
         return redirect('/admin/dashboard/mitra')->with('success', 'Data berhasil diupdate.');
+    } catch (\Exception $e) {
+        return redirect()->back()->withInput()->withErrors(['error' => 'Data tidak berhasil disimpan. Coba ulangi kembali.']);
     }
+}
+
 
     /**
      * Display the specified resource.

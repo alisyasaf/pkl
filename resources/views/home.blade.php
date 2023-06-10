@@ -10,21 +10,18 @@
             <img class="d-block img-responsive w-40 mx-auto" src="img/main-1.jpg" alt="First slide" style="width: 80%">
             <div class="carousel-caption d-none d-md-block text-dark" style="background-color: rgba(255, 255, 255, 0.491)">
                 <h5>Penyerahan Partisipasi Program Penghijauan Penanaman Sejuta Pohon</h5>
-                {{-- <p>lalalallalalalal</p> --}}
               </div>
           </div>
           <div class="carousel-item">
             <img class="d-block img-responsive w-40 mx-auto" src="img/main-2.jpg" alt="Second slide" style="width: 80%">
             <div class="carousel-caption d-none d-md-block text-dark" style="background-color: rgba(255, 255, 255, 0.491)">
                 <h5>Penyerahan Bantuan Pembangunan Masjid Asy-Syifa’</h5>
-                {{-- <p>Stay in the middle</p> --}}
               </div>
           </div>
           <div class="carousel-item">
             <img class="d-block img-responsive w-40 mx-auto" src="img/main-3.jpg" alt="Third slide" style="width: 80%">
             <div class="carousel-caption d-none d-md-block text-dark" style="background-color: rgba(255, 255, 255, 0.491)" >
                 <h5>Penyerahan Bantuan Sarana Pendidikan Kepada SDN 2 Tambakromo Cepu</h5>
-                {{-- <p>...</p> --}}
               </div>
         </div>
         </div>
@@ -55,10 +52,16 @@
                 </div>
             </div>
             <div class="d-flex justify-content-center">
-            <a class=" button-1 text-white" type="button" href="/faq" style="text-align: center;text-decoration: none; color:white !important;">
+            <a class=" button-1 text-white" type="button" onclick="openPopup('/faq')" style="text-align: center;text-decoration: none; color:white !important;">
                 Ingin Bergabung?
             </a>
         </div>
         </div>
       </div>
+      <script>
+        function openPopup(url) {
+            var newTab = window.open(url, '_blank');
+            newTab.focus();
+        }
+    </script>
 @endsection

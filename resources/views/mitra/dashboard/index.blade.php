@@ -8,7 +8,6 @@
             <div class="col-sm-5 bio" style="padding-left: 30px; padding-top: 0%">
                 <p style="font-size:16pt; margin-bottom: 10px">{{ auth()->user()->name }}</p>
                 <p style="font-size:14pt; margin-bottom: 10px">Mitra</p>
-                <p style="font-size:14pt">ID</p>
             </div>
         </div>
 

@@ -4,34 +4,42 @@
 @section('container-mitra')
 
 <div class="container mt-4 d-flex flex-column">
-<h1 cla>Pembayaran Angsuran</h1>
-<div class="flex-containerr">
-<div class="kontainer mt-3">
-<p class="nominal">Nominal: {{ $angsuran->nominal }}</p>
-<form action="/mitra/dashboard/pembayaran" method="post" enctype="multipart/form-data">
-    <!-- Add CSRF Token -->
-    @csrf
-     <div class="form-group">
-      <h6 for="pembayaran">Bulan Bayar</h6>
-      <input type="month" id="bulan_bayar" name="bulan_bayar">
-      @error('bulan_bayar')
-      <span class="text-red-600 text-sm">{{ $message }}</span>
-      @enderror
-    </div>
-    <div class="form-group">
-        <h6 for="Upload">Bukti Bayar</h6>
-        <input type="file" name="bukti_bayar">
-        @error('bukti_bayar')
-        <span class="text-red-600 text-sm">{{ $message }}</span>
-        @enderror
-    </div>
-    <input type="text" name="id" value="{{ $angsuran->id }}" hidden>
+    <h1>Pembayaran Angsuran</h1>
+    <div class="flex-containerr">
+        <div class="kontainer mt-3">
+            <p class="nominal">Nominal: {{ formatRupiah($angsuran->nominal) }}</p>
+            <form action="/mitra/dashboard/pembayaran" method="post" enctype="multipart/form-data">
+                <!-- Add CSRF Token -->
+                @csrf
 
+                <div class="form-group">
+                    <label for="bulan_bayar">Bulan Bayar</label>
+                    <input type="month" id="bulan_bayar" name="bulan_bayar"
+                        class="form-control @error('bulan_bayar') is-invalid @enderror">
+                    @error('bulan_bayar')
+                        <div class="invalid-feedback" style="color: red;">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
 
-    <button type="submit" class="btn btn-primary float-end" style="width: 100px; border-radius: 15px;">Submit</button>
-  </form>
+                <div class="form-group">
+                    <label for="bukti_bayar">Bukti Bayar</label>
+                    <input type="file" name="bukti_bayar"
+                        class="form-control-file @error('bukti_bayar') is-invalid @enderror">
+                    @error('bukti_bayar')
+                        <div class="invalid-feedback" style="color: red;">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+                <input type="text" name="id" value="{{ $angsuran->id }}" hidden>
+
+                <button type="submit" class="btn btn-primary" style="border-radius: 15px;">Submit</button>
+            </form>
+        </div>
+    </div>
 </div>
-</div>
-</div>
-  @endsection
-  @endif
+@endsection
+@endif

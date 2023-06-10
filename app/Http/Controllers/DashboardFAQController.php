@@ -45,6 +45,9 @@ class DashboardFAQController extends Controller
         $validatedData = $request->validate([
             'question' => 'required',
             'answer' => 'required'
+        ], [
+            'question.required' => 'Pertanyaan harus diisi.',
+            'answer.required' => 'Jawaban harus diisi.'
         ]);
 
         DB::table('faq')->insert([
