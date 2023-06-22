@@ -49,11 +49,12 @@
 
         <div class="form-group">
             <label for="user_id" class="form-label">Username</label>
-            {!! Form::select('user_id', $user_id, old('user_id', isset($data) ? $data->user_id : null), ['class' => 'form-control']) !!}
+            {!! Form::select('user_id', $user_id, old('user_id', isset($data) ? $data->user_id : null), ['class' => 'form-control', 'id' => 'user_id']) !!}
             @error('user_id')
             <div class="error-message">{{ $message }}</div>
             @enderror
         </div>
+
 
         <div class="form-group">
             <label for="fullname" class="form-label">Nama Lengkap</label>
@@ -64,7 +65,7 @@
         </div>
 
         <div class="form-group">
-            <label for="nip" class="form-label">NIP</label>
+            <label for="nip" class="form-label">NIP/NIK</label>
             <input type="text" class="form-control" id="nip" name="nip" value="{{ old('nip', isset($data) ? $data->nip : null) }}">
             @error('nip')
             <div class="error-message">{{ $message }}</div>
@@ -73,11 +74,17 @@
 
         <div class="form-group">
             <label for="jenis_usaha" class="form-label">Jenis Usaha</label>
-            <input type="text" class="form-control" id="jenis_usaha" name="jenis_usaha" value="{{ old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) }}">
+            <select class="form-control" id="jenis_usaha" name="jenis_usaha">
+                <option value="Kuliner" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'Kuliner') ? 'selected' : '' }}>Kuliner</option>
+                <option value="Perdagangan" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'Perdagangan') ? 'selected' : '' }}>Perdagangan</option>
+                <option value="Jasa" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'Jasa') ? 'selected' : '' }}>Jasa</option>
+                <option value="Fashion" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'Fashion') ? 'selected' : '' }}>Fashion</option>
+            </select>
             @error('jenis_usaha')
             <div class="error-message">{{ $message }}</div>
             @enderror
         </div>
+
 
         <div class="form-group">
             <label for="nama_usaha" class="form-label">Nama Usaha</label>

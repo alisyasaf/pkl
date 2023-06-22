@@ -38,25 +38,27 @@
                     <i class="bi bi-house-door-fill text-white mr-2" style="font-size: 16pt"></i>
                     <span class="description text-white">Beranda</span>
                     </a>
-                    <a href="/admin/dashboard/mitra" class="list-group-item mb-1">
-                        <i class="bi bi-file-earmark-text-fill text-white mr-2" style="font-size: 16pt"></i>
-                        <span class="description text-white">Mitra</span>
-                    </a>
-                    <a href="/admin/dashboard/faq" class="list-group-item mb-1">
-                        <i class="bi bi-question-lg text-white mr-2" style="font-size: 16pt"></i>
-                        <span class="description text-white">FAQ</span>
-                    </a>
-                    <a href="/admin/dashboard/angsuran" class="list-group-item mb-1">
-                        <i class="bi bi-check-lg text-white mr-2" style="font-size: 16pt"></i>
-                        <span class="description text-white">Angsuran</span>
-                    </a>
                     <a href="/admin/dashboard/account" class="list-group-item mb-1">
                         <i class="bi bi-person-plus-fill text-white mr-2" style="font-size: 16pt"></i>
                         <span class="description text-white">Data User</span>
                     </a>
-                    <a href="/admin/dashboard/verifikasi" class="list-group-item mb-1">
+                    <a href="/admin/dashboard/mitra" class="list-group-item mb-1">
+                        <i class="bi bi-file-earmark-text-fill text-white mr-2" style="font-size: 16pt"></i>
+                        <span class="description text-white">Mitra</span>
+                    </a>
+
+                    <a href="/admin/dashboard/angsuran" class="list-group-item mb-1">
                         <i class="bi bi-file-earmark-check-fill text-white mr-2" style="font-size: 16pt"></i>
+                        <span class="description text-white">Angsuran</span>
+                    </a>
+
+                    <a href="/admin/dashboard/verifikasi" class="list-group-item mb-1">
+                        <i class="bi bi-check-lg text-white mr-2" style="font-size: 16pt"></i>
                         <span class="description text-white">Verifikasi</span>
+                    </a>
+                    <a href="/admin/dashboard/faq" class="list-group-item mb-1">
+                        <i class="bi bi-question-lg text-white mr-2" style="font-size: 16pt"></i>
+                        <span class="description text-white">FAQ</span>
                     </a>
                     <button class="list-group-item" onclick="openPopup('/forum')">
                         <i class="bi bi-chat-left-dots-fill text-white mr-2" style="font-size: 16pt"></i>

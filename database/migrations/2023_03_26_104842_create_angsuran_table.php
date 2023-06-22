@@ -17,9 +17,9 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('mitra_id')->index();
             $table->foreign('mitra_id')->references('id')->on('mitra')->onDelete('cascade')->onUpdate('cascade');
-            $table->date('tanggal_jatuh_tempo');
+            $table->string('tanggal_jatuh_tempo');
             $table->double('nominal');
-            $table->enum('keterangan',['belum lunas','lunas']);
+            $table->enum('keterangan',['belum lunas','lunas','sudah bayar']);
             $table->timestamps();
         });
     }

@@ -12,7 +12,8 @@ class Pembayaran extends Model
     protected $table = 'pembayaran';
     protected $fillable=[
         'bukti_bayar',
-        'bulan_bayar',
+        'nominal_bayar',
+        'tanggal_bayar',
         'mitra_id',
         'angsuran_id'
     ];

@@ -15,8 +15,9 @@ return new class extends Migration
     {
         Schema::create('pembayaran', function (Blueprint $table) {
             $table->id();
-            $table->string('bulan_bayar');
+            $table->string('tanggal_bayar');
             $table->string('bukti_bayar');
+            $table->string('nominal_bayar')->nullable();
             $table->unsignedBigInteger('mitra_id')->nullable();
             $table->foreign('mitra_id')->references('id')->on('mitra')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('angsuran_id');

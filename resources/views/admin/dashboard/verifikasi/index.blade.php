@@ -1,6 +1,9 @@
 @extends('layouts.mainAdmin')
 @include('partials.sidebarAdmin')
 @section('container-admin')
+
+
+
 <h2>Verifikasi Angsuran</h2>
 <div>
     <aside class="search float-right mr-3 mb-3">
@@ -10,7 +13,9 @@
 <table class="table mt-4">
     <thead>
         <tr>
-            <th>Bulan Bayar</th>
+            <th>Tanggal Bayar</th>
+            <th>Nominal Bayar</th>
+            <th>Nominal Seharusnya</th>
             <th>Bukti Bayar</th>
             <th>Mitra</th>
             <th>Keterangan</th>
@@ -21,7 +26,13 @@
         @foreach ($pembayaran as $p)
         <tr>
             <td>
-                {{ $p->bulan_bayar }}
+                {{ $p->tanggal_bayar }}
+            </td>
+            <td>
+                {{ formatRupiah($p->nominal_bayar) }}
+            </td>
+            <td>
+                {{ formatRupiah($p->angsuran->nominal) }}
             </td>
             <td>
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -48,18 +59,39 @@
             <td>
                 {{ $p->angsuran->keterangan }}
             </td>
+            @if ($p->angsuran->keterangan === 'belum lunas')
+    <td>
+        <div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" id="verifikasiDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Verifikasi
+            </button>
+            <div class="dropdown-menu" aria-labelledby="verifikasiDropdown">
+                <form method="POST" action="{{ route('pembayaran.verifikasi', ['angsuran' => $p->angsuran_id]) }}">
+                    @csrf
+                    @method('PUT')
+                    <input type="hidden" name="keterangan" value="lunas">
+                    <button type="submit" class="dropdown-item">Lunas</button>
+                </form>
+                <form method="POST" action="{{ route('pembayaran.verifikasi', ['angsuran' => $p->angsuran_id]) }}">
+                    @csrf
+                    @method('PUT')
+                    <input type="hidden" name="keterangan" value="sudah bayar">
+                    <button type="submit" class="dropdown-item">Sudah Bayar</button>
+                </form>
+            </div>
+        </div>
+    </td>
+@endif
 
-            @if($p->angsuran->keterangan === 'belum lunas')
-            <td>
-                <a class="btn btn-success" href="/pembayaran/verifikasi/{{ $p->angsuran_id }}">
-                    Verifikasi
-                </a>
-            </td>
-            @endif
+
+
         </tr>
     @endforeach
     </tbody>
 </table>
 
 <script src="{{ asset('js/search.js') }}"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+
 @endsection

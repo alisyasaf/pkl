@@ -75,11 +75,27 @@ class MitraController extends Controller
     ]);
 
     try {
-        // Insert the data into the mitra table
-        // ...
+        // Format tanggal menjadi "dd-mm-yyyy"
+        $tanggal_mulai = date('d-m-Y', strtotime($request->input('tanggal_mulai')));
+        $tanggal_selesai = date('d-m-Y', strtotime($request->input('tanggal_selesai')));
+
+        Mitra::create([
+            'user_id' => $request['user_id'],
+            'fullname' => $request['fullname'],
+            'nip' => $request['nip'],
+            'jenis_usaha' => $request['jenis_usaha'],
+            'nama_usaha' => $request['nama_usaha'],
+            'alamat' => $request['alamat'],
+            'alamat_usaha' => $request['alamat_usaha'],
+            'aset_awal' => $request['aset_awal'],
+            'nominal_pinjaman' => $request['nominal_pinjaman'],
+            'tanggal_mulai' => $tanggal_mulai,
+            'tanggal_selesai' => $tanggal_selesai
+        ]);
+
         return redirect('/admin/dashboard/mitra')->with('success', 'Data berhasil diupdate.');
     } catch (\Exception $e) {
-        return redirect()->back()->withInput()->withErrors(['error' => 'Data tidak berhasil disimpan. Coba ulangi kembali.']);
+        return redirect()->back()->withErrors(['error' => 'Terjadi kesalahan saat menyimpan data.'])->withInput();
     }
 }
 
@@ -120,19 +136,7 @@ class MitraController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $request->validate([
-        //     'nip' => 'required',
-        //     'answer' => 'required'
-        // ]);
-
-        // DB::table('mitra')
-        // ->where('id', $id)
-        // ->update([
-        //     // 'id' => $request['id'],
-        //     'question' => $request['question'],
-        //     'answer' => $request['answer']
-        // ]);
-        // return redirect('/admin/dashboard/mitra/')->with('success', 'Data berhasil ditambah!');
+       //
     }
 
     /**

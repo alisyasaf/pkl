@@ -63,6 +63,10 @@ Route::resource('/admin/dashboard/angsuran', AngsuranController::class)
 Route::resource('/admin/dashboard/verifikasi', VerifikasiController::class)
     ->middleware('auth.admin');
 
+Route::put('/pembayaran/verifikasi/{angsuran}', [VerifikasiController::class, 'verifikasi'])->name('pembayaran.verifikasi');
+
+
+
 // Manajemen akun oleh admin (Generate Akun)
 Route::get('/admin/dashboard/account', [AccountController::class, 'index'])
     ->middleware('auth.admin');

@@ -42,10 +42,13 @@ class PembayaranController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'bulan_bayar' => 'required',
-            'bukti_bayar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048'
+            'tanggal_bayar' => 'required',
+            'bukti_bayar' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2048',
+            'nominal_bayar' => 'required|numeric'
         ], [
-            'bulan_bayar.required' => 'Bulan Bayar harus diisi.',
+            'tanggal_bayar.required' => 'Bulan Bayar harus diisi.',
+            'nominal_bayar.required' => 'Nominal Bayar harus diisi.',
+            'nominal_bayar.numeric' => 'Nominal Bayar harus berupa angka.',
             'bukti_bayar.required' => 'Bukti Bayar harus diisi.',
             'bukti_bayar.image' => 'File yang diunggah harus berupa gambar.',
             'bukti_bayar.mimes' => 'File yang diunggah harus memiliki format jpg, png, jpeg, gif, atau svg.',
@@ -56,7 +59,8 @@ class PembayaranController extends Controller
 
         $data = Pembayaran::create([
             'angsuran_id' => $request['id'],
-            'bulan_bayar' => $request['bulan_bayar'],
+            'tanggal_bayar' => $request['tanggal_bayar'],
+            'nominal_bayar' => $request['nominal_bayar'],
             'bukti_bayar' => $image_path,
             'mitra_id' => auth()->user()->mitra->id,
         ]);

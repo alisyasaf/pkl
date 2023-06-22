@@ -13,6 +13,7 @@ class Mitra extends Model
     protected $table = 'mitra';
 
     protected $fillable=[
+        'user_id',
         'fullname',
         'nip',
         'jenis_usaha',
@@ -33,7 +34,7 @@ class Mitra extends Model
         return $this->hasMany(Angsuran::class);
     }
     public function pembayaran(){
-        return $this->hasMany(Payment::class);
+        return $this->hasMany(Pembayaran::class);
     }
 
 

@@ -13,10 +13,23 @@
                 @csrf
 
                 <div class="form-group">
-                    <label for="bulan_bayar">Bulan Bayar</label>
-                    <input type="month" id="bulan_bayar" name="bulan_bayar"
-                        class="form-control @error('bulan_bayar') is-invalid @enderror">
-                    @error('bulan_bayar')
+                    <label for="tanggal_bayar">Tanggal Bayar</label>
+                    <input type="date" id="tanggal_bayar" name="tanggal_bayar"
+                        class="form-control datepicker @error('tanggal_bayar') is-invalid @enderror"
+                        value="{{ old('tanggal_bayar', date('d-m-Y')) }}">
+                    @error('tanggal_bayar')
+                        <div class="invalid-feedback" style="color: red;">
+                            {{ $message }}
+                        </div>
+                    @enderror
+                </div>
+
+
+                <div class="form-group">
+                    <label for="nominal_bayar">Nominal Bayar</label>
+                    <input type="text" id="nominal_bayar" name="nominal_bayar"
+                        class="form-control @error('nominal_bayar') is-invalid @enderror">
+                    @error('nominal_bayar')
                         <div class="invalid-feedback" style="color: red;">
                             {{ $message }}
                         </div>

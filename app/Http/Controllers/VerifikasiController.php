@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Pembayaran;
+use App\Models\Angsuran;
 use Illuminate\Http\Request;
 
 class VerifikasiController extends Controller
@@ -84,5 +85,17 @@ class VerifikasiController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function verifikasi(Request $request, $id)
+    {
+        $angsuran = Angsuran::findOrFail($id);
+        $keterangan = $request->input('keterangan');
+
+        $angsuran->keterangan = $keterangan;
+        $angsuran->save();
+
+
+        return redirect()->back()->with('success', 'Keterangan updated successfully');
     }
 }

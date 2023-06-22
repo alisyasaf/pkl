@@ -27,8 +27,8 @@ return new class extends Migration
             $table->string('alamat_usaha');
             $table->double('aset_awal');
             $table->double('nominal_pinjaman');
-            $table->date('tanggal_mulai');
-            $table->date('tanggal_selesai');
+            $table->string('tanggal_mulai');
+            $table->string('tanggal_selesai');
             $table->timestamps();
         });
     }
