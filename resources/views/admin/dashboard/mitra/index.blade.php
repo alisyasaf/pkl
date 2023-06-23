@@ -21,7 +21,7 @@
                 <tr>
                     <th scope="col">#</th>
                     <th scope="col">Nama</th>
-                    <th scope="col">NIP</th>
+                    <th scope="col">NIP/NIK</th>
                     <th scope="col">Nama Usaha</th>
                     <th scope="col">Keterangan</th>
                 </tr>

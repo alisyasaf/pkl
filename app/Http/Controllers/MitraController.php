@@ -35,7 +35,7 @@ class MitraController extends Controller
      */
     public function create()
     {
-        $data = ['user_id' => User::where('role', '2')->pluck('name', 'id')];
+        $data = ['user_id' => User::where('role', '2')->pluck('username', 'id')];
         return view('admin.dashboard.mitra.create', $data);
     }
 

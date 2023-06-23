@@ -48,7 +48,7 @@
         @csrf
 
         <div class="form-group">
-            <label for="user_id" class="form-label">Username</label>
+            <label for="user_id" class="form-label">Kode Customer</label>
             {!! Form::select('user_id', $user_id, old('user_id', isset($data) ? $data->user_id : null), ['class' => 'form-control', 'id' => 'user_id']) !!}
             @error('user_id')
             <div class="error-message">{{ $message }}</div>
@@ -75,10 +75,11 @@
         <div class="form-group">
             <label for="jenis_usaha" class="form-label">Jenis Usaha</label>
             <select class="form-control" id="jenis_usaha" name="jenis_usaha">
-                <option value="Kuliner" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'Kuliner') ? 'selected' : '' }}>Kuliner</option>
-                <option value="Perdagangan" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'Perdagangan') ? 'selected' : '' }}>Perdagangan</option>
-                <option value="Jasa" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'Jasa') ? 'selected' : '' }}>Jasa</option>
-                <option value="Fashion" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'Fashion') ? 'selected' : '' }}>Fashion</option>
+                <option value="Kuliner" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'KULINER') ? 'selected' : '' }}>KULINER</option>
+                <option value="Perdagangan" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'PERDAGANGAN') ? 'selected' : '' }}>PERDAGANGAN</option>
+                <option value="Jasa" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'JASA') ? 'selected' : '' }}>JASA</option>
+                <option value="Fashion" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'FASHION') ? 'selected' : '' }}>FASHION</option>
+                <option value="Fashion" {{ (old('jenis_usaha', isset($data) ? $data->jenis_usaha : null) == 'INDUSTRI') ? 'selected' : '' }}>INDUSTRI</option>
             </select>
             @error('jenis_usaha')
             <div class="error-message">{{ $message }}</div>

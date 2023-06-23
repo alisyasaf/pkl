@@ -25,7 +25,7 @@
                 @forelse ($angsuran as $key=>$value)
                 <tr>
                     <td>{{ $key+1 }}</td>
-                    <td>{{ $value->mitra->nama_usaha}}</td>
+                    <td>{{ $value->mitra->fullname}}</td>
                     <td>{{ $value->tanggal_jatuh_tempo }}</td>
                     <td>{{ formatRupiah($value->nominal) }}</td>
                     <td class="">{{ $value->keterangan }}</td>

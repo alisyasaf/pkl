@@ -20,7 +20,7 @@ class DatabaseSeeder extends Seeder
         //     'username' => ''
         // ]);
         User::create([
-            'name' => 'Alisya',
+            'name' => 'ALISYA',
             'email' => 'alisya397@gmail.com',
             'username' => 'admin',
             'password' => bcrypt('12345'),
@@ -28,9 +28,32 @@ class DatabaseSeeder extends Seeder
         ]);
 
         User::create([
-            'name' => 'Burjo Polsek',
-            'email' => 'burjopolsek@gmail.com',
-            'username' => 'burjopolsek',
+            'name' => 'CHRISTIANA WIDIASTUTI',
+            'email' => 'christianawid@gmail.com',
+            'username' => 'L400120005',
+            'password' => bcrypt('12345'),
+            'role' => '2'
+        ]);
+        User::create([
+            'name' => 'ERRY BUDIARTO SULAKSONO',
+            'email' => 'sulaksono@gmail.com',
+            'username' => 'L400120003',
+            'password' => bcrypt('12345'),
+            'role' => '2'
+        ]);
+
+        User::create([
+            'name' => 'NINING RAHAYU',
+            'email' => 'niningra@gmail.com',
+            'username' => 'L400120004',
+            'password' => bcrypt('12345'),
+            'role' => '2'
+        ]);
+
+        User::create([
+            'name' => 'ABU SAERI',
+            'email' => 'abusaeri@gmail.com',
+            'username' => 'L400220001',
             'password' => bcrypt('12345'),
             'role' => '2'
         ]);

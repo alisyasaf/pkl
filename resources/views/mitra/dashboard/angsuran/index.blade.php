@@ -5,7 +5,7 @@
 <table class="table mt-4">
     <thead>
         <tr>
-            <th scope="col">Mitra</th>
+            <th scope="col">Nama Mitra</th>
             <th scope="col">Tanggal Jatuh Tempo</th>
             <th scope="col">Nominal</th>
             <th scope="col">Keterangan</th>
@@ -15,7 +15,7 @@
     <tbody>
     @foreach ($angsuran as $a)
         <tr>
-            <td class="align-middle">{{ $a->mitra->nama_usaha }}</td>
+            <td class="align-middle">{{ $a->mitra->fullname }}</td>
             <td class="align-middle">{{ $a->tanggal_jatuh_tempo }}</td>
             <td class="align-middle">{{ formatRUpiah($a->nominal) }}</td>
             <td class="align-middle">{{ $a->keterangan }}</td>

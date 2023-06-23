@@ -17,7 +17,7 @@
             <th>Nominal Bayar</th>
             <th>Nominal Seharusnya</th>
             <th>Bukti Bayar</th>
-            <th>Mitra</th>
+            <th>Nama Mitra</th>
             <th>Keterangan</th>
             <th>Aksi</th>
         </tr>
@@ -55,7 +55,7 @@
                     </div>
                 </div>
             </td>
-            <td>{{ $p->mitra->nama_usaha }}</td>
+            <td>{{ $p->mitra->fullname }}</td>
             <td>
                 {{ $p->angsuran->keterangan }}
             </td>

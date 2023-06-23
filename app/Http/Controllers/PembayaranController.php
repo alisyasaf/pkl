@@ -56,10 +56,10 @@ class PembayaranController extends Controller
         ]);
 
         $image_path = $request->file('bukti_bayar')->store('bukti_bayar', 'public');
-
+        $tanggal_bayar = date('d-m-Y', strtotime($request->input('tanggal_bayar')));
         $data = Pembayaran::create([
             'angsuran_id' => $request['id'],
-            'tanggal_bayar' => $request['tanggal_bayar'],
+            'tanggal_bayar' => $tanggal_bayar,
             'nominal_bayar' => $request['nominal_bayar'],
             'bukti_bayar' => $image_path,
             'mitra_id' => auth()->user()->mitra->id,

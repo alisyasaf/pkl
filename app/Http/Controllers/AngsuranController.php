@@ -32,7 +32,7 @@ class AngsuranController extends Controller
      */
     public function create()
     {
-        $data = ['mitra_id' => Mitra::all()->pluck('nama_usaha', 'id')];
+        $data = ['mitra_id' => Mitra::all()->pluck('fullname', 'id')];
         return view('admin.dashboard.angsuran.create', $data);
     }
 
