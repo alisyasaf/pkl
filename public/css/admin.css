@@ -1,1 +1,42 @@
+.container-admin{
+    margin-left: 60px;
+    margin-top: 8px;
+}
+
+#myTable .button-detail:hover{
+    background-color: white;
+    color: white;
+}
+
+/* Extra Small Devices (Portrait Phones) */
+@media (max-width: 576px) {
+    /* CSS styles for extra small devices */
+    .container-admin{
+        margin-left: 20px !important;
+    }
+  }
+
+  /* Small Devices (Landscape Phones) */
+  @media (min-width: 576px) and (max-width: 767px) {
+    /* CSS styles for small devices */
+    .container-admin{
+        margin-left: 20px !important;
+    }
+
+    .d-flex .p-2{
+        padding: 0;
+        height: min-content;
+    }
+
+  }
+
+
+  /* Medium Devices (Tablets) */
+  @media (min-width: 768px) and (max-width: 992px) {
+    /* CSS styles for medium devices */
+    #dashboard-admin{
+        margin-left: 20px !important;
+    }
+
+  }
 

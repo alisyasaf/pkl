@@ -45,7 +45,7 @@
                 </div>
                 <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary mr-3">Tambah FAQ</button>
-                    <a href="/admin/dashboard/faq" class="btn btn-danger active" role="button" aria-pressed="true">Cancel</a>
+                    <a href="/admin/dashboard/mitra" class="btn btn-danger active" role="button" style="width: 200px; height: 150px" aria-pressed="true">Batalkan</a>
                 </div>
             </form>
         </div>

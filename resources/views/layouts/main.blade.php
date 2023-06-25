@@ -25,27 +25,28 @@
 
     <link rel="stylesheet" href="{{ asset('css/navbar.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/style.css') }}"> --}}
-    <link rel="stylesheet" href="{{ asset('css/mitra.css') }}">
     <link rel="stylesheet" href="{{ asset('css/guest.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/admin.css') }}">
+    {{-- <link rel="stylesheet" href="{{ asset('css/mitra.css') }}">
+
+    <link rel="stylesheet" href="{{ asset('css/admin.css') }}"> --}}
     <title>{{ $title }}</title>
   </head>
-  <body>
+  <body class="bodyGuest" style="width: 100%; margin:0">
 
         {{-- @include('partialsMitra.sidebarMitra')
         @include('partials.sidebarAdmin') --}}
 
-        <div class="" style="margin-left: 60px; margin-top:8px">
+        <div class="container-content" style="margin-left: 60px; margin-top:8px">
             @yield('container')
             {{-- @yield('generate') --}}
         </div>
 
     <!-- Footer -->
-  <footer class="text-center text-lg-start bg-light text-muted p-0 ml-4">
+  <footer class="text-center text-lg-start bg-light text-muted p-0 ml-4" id="footer">
 
     <!-- Section: Links  -->
     <section class="">
-      <div class="container text-center text-md-start">
+      <div class="container text-center text-md-start" id="main-footer">
         <!-- Grid row -->
         <div class="row mt-5">
           <!-- Grid column -->
@@ -61,7 +62,7 @@
           <!-- Grid column -->
 
           <!-- Grid column -->
-          <div class="col-sm mx-auto mb-4">
+          <div class="col-sm mx-auto mb-4" id="footer-content">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mt-4 mb-3" style="font-size: 11pt">
               Hubungi Kami
@@ -76,7 +77,7 @@
           <!-- Grid column -->
 
           <!-- Grid column -->
-          <div class="col-sm mx-auto mb-4">
+          <div class="col-sm mx-auto mb-4" id="footer-content">
             <!-- Links -->
             <h6 class="text-uppercase fw-bold mt-4 mb-3" style="font-size: 11pt">
               Jam Operasional

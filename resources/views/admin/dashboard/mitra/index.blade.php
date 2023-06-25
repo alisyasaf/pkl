@@ -13,7 +13,7 @@
         <div>
         <a href="/admin/dashboard/mitra/create" class="btn btn-primary mb-5 float-right mr-4 rounded">Tambah Data Mitra</a>
         <aside class="search float-right mr-3 mb-3">
-            <input class="form-control" id="myInput" type="text" placeholder="Search..">
+            <input class="form-control" style="border-radius: 75px" id="myInput" type="text" placeholder="Search..">
         </aside>
         </div>
         <table class="table table-striped table-sm">
@@ -34,12 +34,11 @@
                     <td>{{ $value->nip }}</td>
                     <td>{{ $value->nama_usaha }}</td>
                     <td>
-                            <a href="/admin/dashboard/mitra/{{ $value->id }}" class="badge bg-info">detail</a>
-                        {{-- <a href="/admin/dashboard/mitra/{{ $item->id }}/show" class="badge bg-info">detail</a> --}}
+                        <a href="/admin/dashboard/mitra/{{ $value->id }}" class="badge btn-sm button-detail" style="background-color: #061755; text-decoration:none;">detail</a>
                         <form action="/admin/dashboard/mitra/{{ $value->id }}" method="POST" style="display: inline-block;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="badge bg-danger" onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">delete</button>
+                            <button type="submit" class="badge btn-sm" style="background-color: red; border-style:none" onclick="showDeleteConfirmation(event)">delete</button>
                         </form>
                     </td>
                 </tr>
@@ -51,4 +50,5 @@
     </div>
 
     <script src="{{ asset('js/search.js') }}"></script>
+    <script src="{{ asset('js/delete-mitra.js') }}"></script>
 @endsection

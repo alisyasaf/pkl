@@ -3,7 +3,7 @@
 @include('partials.sidebarMitra')
 @section('container-mitra')
 
-<div class="container mt-4 d-flex flex-column">
+<div class="container mt-4 d-flex flex-column container-bayar">
     <h1>Pembayaran Angsuran</h1>
     <div class="flex-containerr">
         <div class="kontainer mt-3">
@@ -49,7 +49,7 @@
 
                 <input type="text" name="id" value="{{ $angsuran->id }}" hidden>
 
-                <button type="submit" class="btn btn-primary" style="border-radius: 15px;">Submit</button>
+                <button type="submit" class="btn btn-primary float-right" style="border-radius: 15px;">Submit</button>
             </form>
         </div>
     </div>
