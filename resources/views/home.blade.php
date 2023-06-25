@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @include('partials.sidebarGuest')
 @section('container')
-    <div class="container mx-auto">
+    <div class="container">
         <h1>Selamat Datang </h1>
     </div>
     <div id="carouselExampleControls" class="carousel slide pt-2" data-ride="carousel" data-interval="3000" style="z-index: 0">
@@ -35,14 +35,14 @@
         </a>
       </div>
 
-      <div class="container" style="width: 60%">
-        <div class="count shadow p-3 mb-5 bg-white rounded mt-4">
+      <div class="container" style="width: 60%" id="count-mitra">
+        <div class="count shadow p-3 mb-5 bg-white rounded mt-4" id="count-mitra2">
             <span>Mitra Kami</span>
             <div class="line mt-2"></div>
             <div class="d-flex mitra-1">
                 <div class="d-flex mitra-2 ">
                     <div class="d-flex">
-                        <i class="bi bi-people-fill pr-4" style="font-size: 100pt; color:#E8C21D"></i>
+                        <i class="logo-home bi bi-people-fill pr-4" style="font-size: 100pt; color:#E8C21D"></i>
                     </div>
                     <div class="text-center">
                         <span style="font-size: 50px">{{ $jumlah_mitra }}</span>

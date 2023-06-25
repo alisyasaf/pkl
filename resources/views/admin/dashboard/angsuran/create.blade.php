@@ -11,13 +11,36 @@
             font-family: Poppins;
             margin-left: 10px
         }
+
+        .container {
+        width: 60%;
+        background-color: #e4e4e4;
+        border-radius: 20px;
+        margin-top: 20px;
+        padding: 20px;
+        margin-left: auto;
+        margin-right: auto
+    }
         .form-control {
-            width: 50%
+            border-radius: 20px;
+        border-color: rgb(190, 190, 190);
+        width: 100%;
+        padding: 10px;
         }
+
+        .btn {
+        margin-top: 40px;
+        border-radius: 50px;
+        background-color: #061755;
+        color: white;
+        width: 150px;
+        font-family: Poppins;
+    }
     </style>
     <title>Tambah Data Angsuran</title>
 </head>
 <body>
+    <div class="container">
     <h1>Tambah Data Angsuran</h1>
     <div class="">
         <form method="post" action="/admin/dashboard/angsuran">
@@ -47,5 +70,6 @@
             <button type="submit" class="btn btn-primary">Tambah Data</button>
         </form>
     </div>
+</div>
 </body>
 </html>

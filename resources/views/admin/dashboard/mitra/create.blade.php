@@ -1,10 +1,20 @@
 <style>
+    .{
+        font-family: Poppins !important;
+    }
+
     .container {
         width: 60%;
         background-color: #e4e4e4;
         border-radius: 20px;
         margin-top: 20px;
         padding: 20px;
+        margin-left: auto;
+        margin-right: auto
+    }
+
+    .form-label{
+        font-family: Poppins
     }
 
     .form-group {
@@ -27,6 +37,12 @@
         font-family: Poppins;
     }
 
+    .btn-warning{
+        width: 150px !important;
+        border-radius: 50px;
+        background-color: red
+    }
+
     input {
         border-style: solid;
     }
@@ -36,11 +52,13 @@
         font-size: 14px;
         margin-top: 5px;
     }
+
+
 </style>
 
-<title>Tambah Data Mitra</title>
+{{-- <title>Tambah Data Mitra</title> --}}
 
-<div class="container">
+<div class="container mx-auto">
     <h1 style="font-family: Poppins">Tambah Data Mitra</h1>
 
     <form method="post" action="/admin/dashboard/mitra">
@@ -143,6 +161,13 @@
             @enderror
         </div>
 
-        <button type="submit" class="btn btn-primary">Tambah Data</button>
+        {{-- <div class="d-flex justify-content-center"> --}}
+            {{-- <div class="p-2"> --}}
+            <button type="submit" class="p-2 btn btn-primary" style="font-size: 12pt">Tambah Data</button>
+        {{-- </div> --}}
+            {{-- <div class="p-2 button-cancel"> --}}
+            {{-- <a href="/admin/dashboard/mitra" class="btn btn-warning btn-md" role="button">Batalkan</a> --}}
+        {{-- </div> --}}
+        {{-- </div> --}}
     </form>
 </div>

@@ -6,22 +6,12 @@
         <img src="{{ asset('img/logo.png') }}" alt="logo" width="100">
       </a>
     </div>
-      <div id="menu-button">
+      <div class="nav-item" id="menu-button">
         <input type="checkbox" id="menu-checkbox">
         <label for="menu-checkbox" id="menu-label">
             <div id="hamburger"></div>
         </label>
       </div>
-      {{-- <div class="nav-item dropdown ml-auto p-2">
-      <div class="me-1 flex text-black nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        <i class="nav-icon fa-regular fa-user text-black"></i>
-        <!-- <li class="nav-item"><a href="profil-mahasiswa.php" class="nav-pills-link justify-content-center text-light"><h5>Mahasiswa</h5></a></li> -->
-        {{ auth()->user()->name }}
-      </div>
-      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" >
-        <a href="/logout" class="dropdown-item">Keluar</a>
-      </div>
-    </div> --}}
 
     <div class="nav-item ml-auto p-2">
         <i class="nav-icon fa-regular fa-user text-black"></i>
@@ -32,6 +22,7 @@
 
     <aside class="main-sidebar mt-5 pt-3" style="z-index: 1">
         <div class="sidebar">
+            <div class="blocker"></div>
             <div class="main">
                 <div class="list-item">
                     <a href="/admin/dashboard" class="list-group-item mb-1">
@@ -74,6 +65,7 @@
     </aside>
 
     <script src="{{ asset('js/scriptNavbar.js') }}"></script>
+    <script src="{{ asset('js/scriptNavbarPhone.js') }}"></script>
     <script>
         function openPopup(url) {
             var newTab = window.open(url, '_blank');

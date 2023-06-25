@@ -1,3 +1,7 @@
+{{-- @if (Auth::user()->role==2)
+@extends('layouts.mainMitra')
+@include('partials.sidebarGuest')
+@else --}}
 @extends('layouts.main')
 @include('partials.sidebarGuest')
 @section('container')
@@ -75,3 +79,4 @@
 
 
 @endsection
+{{-- @endif --}}

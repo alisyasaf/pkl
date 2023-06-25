@@ -16,7 +16,10 @@
     border-radius: 25px;
     flex-direction: row;
     display: flex;
-    width: 40%;
+    width: 400px;
+    float: left;
+    margin-left: 20px;
+    margin-bottom: 20px
 }
 .DM2{
     margin-top: 20px;
@@ -56,15 +59,59 @@ aside{
     width: 200px;
 }
 
-/* .text-wrap {
-  word-wrap: break-word;
-  white-space: normal;
-} */
+.DM2 td{
+    word-wrap: break-word !important;
+    width: 250px
+}
+
+@media (max-width: 576px){
+    .DM2{
+        flex-direction: column !important;
+    }
+
+    .DM2 label{
+        width: 210px
+    }
+
+    .col1{
+        margin-left: 0
+    }
+
+    .col2{
+        margin-left:0
+    }
+}
+
+@media (min-width: 576px) and (max-width: 641px){
+    label{
+        width: 210px;
+    }
+
+    .DM2{
+        flex-direction: column !important;
+    }
+}
+
+@media (min-width: 641px) and (max-width: 1166px){
+    #mitra-content {
+    word-wrap:break-word;
+    width: 260px
+}
+
+label{
+    width: 255px;
+}
+
+td{
+    word-wrap: break-word;
+}
+}
+
 </style>
 <title>Detail Mitra</title>
     {{-- Body --}}
 <h1>Detail Mitra</h1>
-<div class="flex-container DM1" >
+<div class="container DM1" >
     <div class="bi bi-person-circle" style="font-size: 90pt; margin: 5% 0 5% 5%"></div>
     <div class="bio" style="padding-left: 30px; padding-top: 4%">
      <p>{{ $mitra->fullname }}</p>
@@ -74,29 +121,29 @@ aside{
  </div>
 <div class="DM2 d-flex flex-row">
     {{-- <div class="row"> --}}
-        <div class="col-lg-6">
+        <div class="col-lg-6 col1">
             <div class="row mb-1">
                 <label for="fullname" class="col-sm-6 form-label">Nama Peminjam :</label>
-                <td class="col-sm-9">{{ $mitra->fullname }}</td>
+                <td class="col-sm-9 text-wrap">{{ $mitra->fullname }}</td>
             </div>
             <div class="row mb-1">
-                <label for="nip" class="col-sm-6 form-label">NIP :</label>
+                <label for="nip" class="col-sm-6 form-label">NIP/NIK :</label>
                 <td class="col-sm-9">{{ $mitra->nip }}</td>
             </div>
             <div class="row mb-1">
                 <label for="nip" class="col-sm-6 form-label">Alamat Mitra :</label>
-                <div class="col-sm-9 text-wrap" style="width: 260px; margin-left:0; padding-left:0">{{ $mitra->alamat }}</div>
+                <td class="col-sm-9 text-wrap" id="mitra-content" style="width: 260px; margin-left:0; padding-left:0">{{ $mitra->alamat }}</td>
             </div>
             <div class="row mb-1">
                 <label for="nip" class="col-sm-6 form-label">Aset Awal :</label>
                 <td class="col-sm-9">{{ formatRupiah($mitra->aset_awal) }}</td>
             </div>
             <div class="row mb-1">
-                <label for="nominal_pinjaman" class="col-sm-6 form-label">Nominal Pinjaman</label>
+                <label for="nominal_pinjaman" class="col-sm-6 form-label">Nominal Pinjaman :</label>
                 <td class="col-sm-9">{{ formatRupiah($mitra->nominal_pinjaman) }}</td>
             </div>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col2">
             <div class="row mb-1">
                 <label for="nip" class="col-sm-6 form-label">Jenis Usaha :</label>
                 <td class="col-sm-9">{{ $mitra->jenis_usaha }}</td>
@@ -107,7 +154,7 @@ aside{
             </div>
             <div class="row mb-1">
                 <label for="nip" class="col-sm-6 form-label">Alamat Usaha :</label>
-                <td class="col-sm-9">{{ $mitra->alamat_usaha }}</td>
+                <td class="col-sm-9 text-wrap">{{ $mitra->alamat_usaha }}</td>
             </div>
             <div class="row mb-1">
                 <label for="nip" class="col-sm-6 form-label">Tanggal Mulai Pinjam :</label>

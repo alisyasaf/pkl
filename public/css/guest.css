@@ -42,7 +42,71 @@
     padding-bottom: 5px;
 }
 
-/* .text-center{
-    align-items: center;
+/* Extra Small Devices (Portrait Phones) */
+@media (max-width: 576px) {
+    /* CSS styles for extra small devices */
+    #footer{
+        margin-left: 0 !important;
+    }
 
-} */
+    #main-footer{
+        max-width: 100%;
+        margin: 0;
+    }
+
+    footer .logo-home{
+        font-size: 80pt;
+        color: black;
+    }
+
+    footer #footer-content{
+        margin-bottom: 0;
+    }
+
+    #count-mitra{
+        width: 90% !important;
+    }
+
+    #count-mitra2{
+        width: 90%;
+    }
+
+    .container-content{
+        margin-left: 10px !important;
+    }
+  }
+
+  /* Small Devices (Landscape Phones) */
+  @media (min-width: 576px) and (max-width: 767px) {
+    /* CSS styles for small devices */
+    footer{
+        margin-left: 0;
+    }
+
+    #main-footer{
+        max-width: 100%;
+        margin: 0;
+    }
+
+    footer .logo-home{
+        font-size: 80pt;
+        color: black;
+    }
+
+    .container-content{
+        margin-left: 10px !important;
+    }
+  }
+
+  /* Medium Devices (Tablets) */
+  @media (min-width: 768px) and (max-width: 991px) {
+
+    #main-footer{
+        max-width: 100%;
+        margin-left: 50px;
+    }
+
+    .container-content{
+        margin-left: 10px !important;
+    }
+  }

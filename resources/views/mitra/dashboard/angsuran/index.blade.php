@@ -22,7 +22,7 @@
 
             @if ($a->keterangan === 'belum lunas')
             <td class="align-middle">
-                <a class="btn btn-primary" href="/mitra/dashboard/pembayaran/{{ $a->id }}">
+                <a class="btn btn-primary btn-sm" style="border-radius: 80px;" href="/mitra/dashboard/pembayaran/{{ $a->id }}">
                     Bayar
                 </a>
             </td>

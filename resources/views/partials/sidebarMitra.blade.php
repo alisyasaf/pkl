@@ -33,6 +33,7 @@
     <aside class="main-sidebar mt-5 pt-3" style="z-index: 1">
         <!-- Sidebar Menu -->
         <div class="sidebar">
+            <div class="blocker"></div>
             <div class="main">
                 <div class="list-item">
                     <a href="/mitra/dashboard" class="list-group-item mb-1">
@@ -55,17 +56,13 @@
                         <i class="bi bi-box-arrow-right text-white mr-2" style="font-size: 16pt"></i>
                         <span class="description text-white">Logout</span>
                     </a>
-                    {{-- <a href="#" class="list-group-item mb-1">
-                        <i class="bi bi-question-lg text-white mr-2" style="font-size: 16pt"></i>
-                        <span class="description text-white">FAQ</span>
-                    </a> --}}
-
                 </div>
             </div>
         </div>
       <!-- /.sidebar -->
     </aside>
     <script src="{{ asset('js/scriptNavbar.js') }}"></script>
+    <script src="{{ asset('js/scriptNavbarPhone.js') }}"></script>
     <script>
         function openPopup(url) {
             var newTab = window.open(url, '_blank');
